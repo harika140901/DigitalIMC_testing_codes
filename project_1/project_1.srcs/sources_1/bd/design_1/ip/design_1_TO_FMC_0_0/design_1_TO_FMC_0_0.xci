@@ -1,0 +1,122 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "design_1_TO_FMC_0_0",
+    "cell_name": "TO_FMC_0",
+    "component_reference": "xilinx.com:module_ref:TO_FMC:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_TO_FMC_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "design_1_TO_FMC_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg484" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_TO_FMC_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2025.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "capturestart": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "div_ratio": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "SAMPLE_EDGE_TIME": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "SCN_SEL": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
+        "CS_B": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "CLKA": [ { "direction": "in" } ],
+        "CLKB": [ { "direction": "in" } ],
+        "IN_EN": [ { "direction": "in" } ],
+        "SCN_IN": [ { "direction": "in" } ],
+        "COMPUTE_EN": [ { "direction": "in" } ],
+        "DFF_RST": [ { "direction": "in" } ],
+        "MUX_OUT_PAD": [ { "direction": "in" } ],
+        "CONTROL_EN": [ { "direction": "in" } ],
+        "CLK_OUT_PAD": [ { "direction": "in" } ],
+        "CLK_SA_B": [ { "direction": "in" } ],
+        "WEN": [ { "direction": "in" } ],
+        "READ_EN": [ { "direction": "in" } ],
+        "SA_EN": [ { "direction": "in" } ],
+        "BL_PCHG": [ { "direction": "in" } ],
+        "osc_EN": [ { "direction": "in" } ],
+        "WL_EN": [ { "direction": "in" } ],
+        "FMC_L21": [ { "direction": "out" } ],
+        "FMC_L22": [ { "direction": "out" } ],
+        "FMC_R19": [ { "direction": "out" } ],
+        "FMC_T19": [ { "direction": "out" } ],
+        "FMC_K19": [ { "direction": "out" } ],
+        "FMC_K20": [ { "direction": "out" } ],
+        "FMC_D20": [ { "direction": "out" } ],
+        "FMC_C20": [ { "direction": "out" } ],
+        "FMC_E21": [ { "direction": "out" } ],
+        "FMC_D21": [ { "direction": "out" } ],
+        "FMC_N19": [ { "direction": "out" } ],
+        "FMC_N20": [ { "direction": "out" } ],
+        "FMC_J18": [ { "direction": "out" } ],
+        "FMC_K18": [ { "direction": "out" } ],
+        "FMC_R20": [ { "direction": "out" } ],
+        "FMC_R21": [ { "direction": "out" } ],
+        "FMC_L17": [ { "direction": "out" } ],
+        "FMC_M17": [ { "direction": "out" } ],
+        "FMC_B19": [ { "direction": "out" } ],
+        "FMC_B20": [ { "direction": "out" } ],
+        "FMC_E15": [ { "direction": "out" } ],
+        "FMC_D15": [ { "direction": "out" } ],
+        "FMC_F18": [ { "direction": "out" } ],
+        "FMC_E18": [ { "direction": "out" } ],
+        "FMC_M19": [ { "direction": "out" } ],
+        "FMC_M20": [ { "direction": "out" } ],
+        "FMC_N22": [ { "direction": "out" } ],
+        "FMC_P22": [ { "direction": "out" } ],
+        "FMC_J21": [ { "direction": "out" } ],
+        "FMC_J22": [ { "direction": "out" } ],
+        "FMC_G20": [ { "direction": "out" } ],
+        "FMC_G21": [ { "direction": "out" } ],
+        "FMC_G19": [ { "direction": "out" } ],
+        "FMC_F19": [ { "direction": "out" } ],
+        "FMC_D22": [ { "direction": "out" } ],
+        "FMC_C22": [ { "direction": "out" } ],
+        "FMC_B22": [ { "direction": "out" } ],
+        "FMC_C17": [ { "direction": "out" } ],
+        "FMC_C18": [ { "direction": "out" } ],
+        "FMC_B16": [ { "direction": "in" } ],
+        "FMC_B17": [ { "direction": "in" } ],
+        "FMC_B21": [ { "direction": "in" } ],
+        "DIG_AXI_OUT_0": [ { "direction": "out", "size_left": "2", "size_right": "0" } ],
+        "DIG_DEBUG_AXI_OUT_0": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "DIG_DEBUG_AXI_OUT_1": [ { "direction": "out" } ]
+      },
+      "interfaces": {
+        "DFF_RST": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "DFF_RST" } ]
+          }
+        }
+      }
+    }
+  }
+}
