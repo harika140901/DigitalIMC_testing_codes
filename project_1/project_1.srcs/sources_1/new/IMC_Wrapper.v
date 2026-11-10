@@ -7,8 +7,7 @@ module IMC_Wrapper (
     output reg COMPUTE_EN,
     output reg MUX_SEL,
     output reg CLK_CAPTURE,
-    output reg DONE,
-    output reg IMC_DONE
+    output reg DONE
 );
 
     reg [2:0] FSM_state;
@@ -23,17 +22,12 @@ module IMC_Wrapper (
         if (!EN) begin
             COMPUTE_EN     <= 0;
             CLK_CAPTURE   <= 0;
-            IMC_DONE  <= 0;
             if (cyc_one) begin
                 FSM_state   <= IDLE;
-                MUX_SEL      <= 0;
-            end
-            else if (~cyc_one && ~MUX_SEL) begin
-                DONE <= 1;
+                MUX_SEL      <= 0;    //input scan chain storing all 1
             end
             else begin
-                FSM_state   <= MUX_SEL_HI;
-                MUX_SEL      <= 1;
+                FSM_state   <= IDLE;
             end
         end
         else begin  
@@ -51,34 +45,22 @@ module IMC_Wrapper (
                 CLK_CAPTURE_HI: begin
                     CLK_CAPTURE   <= 0;
                     FSM_state <= CLK_CAPTURE_LOW;
-                    IMC_DONE <= 1;
-                    if (cyc_one)
-                        COMPUTE_EN <= 0;
                 end
 
                 CLK_CAPTURE_LOW: begin
-                    if (!MUX_SEL) begin
-                        MUX_SEL <= 1;
-                        FSM_state <= MUX_SEL_HI;
-                    end
-                    else begin
-                        FSM_state <= COMPUTE_EN_OFF;
-                        MUX_SEL <= 0;
-                    end
-                end
-
-                MUX_SEL_HI: begin
-                    COMPUTE_EN   <= 1;
-                    FSM_state <= COMPUTE_EN_ON;
+                    if (!MUX_SEL)
+                        MUX_SEL <= 1;     //all 0 input, activates scanchain2
+                    FSM_state <= COMPUTE_EN_OFF;
                 end
 
                 COMPUTE_EN_OFF: begin
                     COMPUTE_EN <= 0;
+                    DONE <= 1;
                 end
 
                 default: begin
                     FSM_state <= IDLE;
-                    COMPUTE_EN <= 0; CLK_CAPTURE <= 0; IMC_DONE <= 0;
+                    COMPUTE_EN <= 0; CLK_CAPTURE <= 0; 
                 end
             endcase
         end

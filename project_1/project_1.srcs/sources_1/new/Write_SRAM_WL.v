@@ -9,7 +9,6 @@ module Write_SRAM_WL(
 );
 
     
-    parameter N_CYCLES        = 8'd1;
     // FSM states
     parameter IDLE            = 3'd0;
     parameter WEN_ON     = 3'd1;
@@ -19,7 +18,6 @@ module Write_SRAM_WL(
     parameter FINISH          = 3'd5;
 
     reg [2:0] state;
-    reg [7:0] delay_cnt;
 
     // FSM sequential logic
     always @(posedge CLK) begin
@@ -29,58 +27,42 @@ module Write_SRAM_WL(
             WEN  <= 0;
             WL_EN     <= 0;
             done      <= 0;
-            delay_cnt <= 0;
             state <= IDLE;
         end
         else begin
             //Delay Handler
-            delay_cnt <= delay_cnt + 1;
             case (state)
                 IDLE: begin
                     state <= WEN_ON; // No waiting
-                    delay_cnt <= 0;
                 end
 
                 WEN_ON: begin
                     WEN <= 1;
-                    if (delay_cnt == N_CYCLES) begin
-                        state     <= WL_EN_ON;
-                        delay_cnt <= 0;
-                    end
+                    state     <= WL_EN_ON;
                 end
     
                 WL_EN_ON: begin
                     WEN <= 1;
                     WL_EN    <= 1;
-                    if (delay_cnt == N_CYCLES) begin
-                        state     <= WL_EN_OFF;
-                        delay_cnt <= 0;
-                    end
+                    state     <= WL_EN_OFF;
                 end
     
                 WL_EN_OFF: begin
                     WEN <= 1;
                     WL_EN    <= 0;
-                    if (delay_cnt == N_CYCLES) begin
-                        state     <= WEN_OFF;
-                        delay_cnt <= 0;
-                    end
+                    state     <= WEN_OFF;
                 end
     
                 WEN_OFF: begin
                     WEN <= 0;
                     WL_EN    <= 0;
-                    if (delay_cnt == N_CYCLES) begin
-                        state     <= FINISH;
-                        delay_cnt <= 0;
-                    end
+                    state     <= FINISH;
                 end
     
                 FINISH: begin
                     done <= 1;
                     WEN  <= 0;
                     WL_EN     <= 0;
-                    delay_cnt <= 0;
                 end
                 default: state <= IDLE;
             endcase

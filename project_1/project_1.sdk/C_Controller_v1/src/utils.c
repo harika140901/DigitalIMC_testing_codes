@@ -102,7 +102,7 @@ u8 initialise_FPGA(){
 	//Assign Default values to the Digital Signals
 	//This  shall be done from python as set default function before calling anything else.
 	u8 default_values[DIG_IN_SIG_LEN] = {0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1}; //Edit here to change default values
-	u16 scan_len[10] = {900, 900, 90, 90, 1164, 270, 270, 105, 1152, 1152};
+	u16 scan_len[6] = {1152, 1152, 475, 1536, 200, 200};
 	memcpy(GLOBAL_SM_DATA.default_signal_values, default_values, sizeof(default_values));
 	memcpy(GLOBAL_SM_DATA.signal_values, default_values, sizeof(default_values)); //This is just initialise. It will be modified everytime set_ChipIO() is called
 	memcpy(GLOBAL_SM_DATA.scan_len, scan_len, sizeof(scan_len));
@@ -114,9 +114,9 @@ u8 initialise_FPGA(){
 	memcpy(GLOBAL_SM_DATA.mode_signal_values, mode_default_values, sizeof(mode_default_values));
 
 	//Initialize calibration word-lines index
-	u16 calib_wl[12] = {288, 289, 290, 291, 292, 293, 870, 871, 872, 873, 874, 875};
+	//u16 calib_wl[12] = {288, 289, 290, 291, 292, 293, 870, 871, 872, 873, 874, 875};
 
-	memcpy(GLOBAL_SM_DATA.calib_wl, calib_wl, sizeof(calib_wl));
+	//memcpy(GLOBAL_SM_DATA.calib_wl, calib_wl, sizeof(calib_wl));
 	//Initialize AXI Buses
 	initialise_AXI();
 	//Set Chip IO to default. This can be done from python by calling set_ChipIO() with default values as and when needed
@@ -224,87 +224,63 @@ u8 set_ModeIO_to_Default(){
 }
 
 u8 set_ScanID(u8 scan_id){
-	u8 signal_array[4]= {SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3};
-	u8 value_array[4] = {0, 0 ,0, 0};
+	u8 signal_array[3]= {SCN_SEL_0, SCN_SEL_1, SCN_SEL_2};
+	u8 value_array[3] = {0, 0 ,0, 0};
 	switch(scan_id){
-	case TDC_OUT_SC_LM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
+	case INPUT_SC_1:
+		value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
 		break;
-	case TDC_OUT_SC_RM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
+	case INPUT_SC_2:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case CL_EN_SC_LM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
-		break;
-	case CL_EN_SC_RM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 1;value_array[0] = 1;
+	case OUTPUT_SC:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 1;
 		break;
 	case WL_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
+		value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
 		break;
-	case SA_OUT_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 0;value_array[0] = 1;
+	case READ_SC:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case WRITE_DATA_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
-		break;
-	case CONTROL_LOGIC_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 1;value_array[0] = 1;
-		break;
-	case XIN_SC_QUADV:
-		value_array[3] = 1;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
-		break;
-	case XIN_SC_UNITV:
-		value_array[3] = 1;value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
+	case WRITE_SC:
+		value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
 		break;
 	default:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
+		value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
 		break;
 	}
-	u8 ret = set_AXI_Bits(signal_array,4,value_array);
+	u8 ret = set_AXI_Bits(signal_array,3,value_array);
 	return ret;
 }
 
 //Set Scan ID for Fast Scan IN
 u8 set_ScanID_Verilog(u8 scan_id){
-	u8 signal_array[4]= {SCAN_SEL_0_V,SCAN_SEL_1_V,SCAN_SEL_2_V, SCAN_SEL_3_V};
-	u8 value_array[4] = {0, 0 ,0, 0};
+	u8 signal_array[3]= {SCAN_SEL_0_V,SCAN_SEL_1_V,SCAN_SEL_2_V};
+	u8 value_array[3] = {0 ,0, 0};
 	switch(scan_id){
-	case TDC_OUT_SC_LM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
+	case INPUT_SC_1:
+		value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
 		break;
-	case TDC_OUT_SC_RM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
+	case INPUT_SC_2:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case CL_EN_SC_LM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
-		break;
-	case CL_EN_SC_RM:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 1;value_array[0] = 1;
+	case OUTPUT_SC:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 1;
 		break;
 	case WL_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
+		value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
 		break;
-	case SA_OUT_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 0;value_array[0] = 1;
+	case READ_SC:
+		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case WRITE_DATA_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
-		break;
-	case CONTROL_LOGIC_SC:
-		value_array[3] = 0;value_array[2] = 1;value_array[1] = 1;value_array[0] = 1;
-		break;
-	case XIN_SC_QUADV:
-		value_array[3] = 1;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
-		break;
-	case XIN_SC_UNITV:
-		value_array[3] = 1;value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
+	case WRITE_SC:
+		value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
 		break;
 	default:
-		value_array[3] = 0;value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
+		value_array[2] = 0;value_array[1] = 0;value_array[0] = 0;
 		break;
 	}
-	u8 ret = set_MODE_AXI_Bits(signal_array,4,value_array);
+	u8 ret = set_MODE_AXI_Bits(signal_array,3,value_array);
 	//DEBUG_PRINT("Scan ID Verilog SET\n");
 	return ret;
 }
@@ -544,11 +520,11 @@ u8 verilog_scan_in(u8* scan_data, u8 scan_id, u16 scan_len){
 	//DEBUG_PRINT("Transfered SCAN_IN Data to Verilog Controller\n");
 
 	//Call Scan IN Verilog Enable Here. And wait for it to complete.
-	//set verilog scan = 1 and NCLK = 255
+	//set verilog scan = 1 
 	{
-		u8 signals[10] = {VERILOG_C_SCAN,NCLK_0_V,NCLK_1_V,NCLK_2_V,NCLK_3_V,NCLK_4_V,NCLK_5_V,NCLK_6_V,NCLK_7_V,Test_DMA_V};
-		u8 values[10] = {1,1,0,0,0,0,0,0,0,0};
-		set_MODE_AXI_Bits(signals,10,values);
+		u8 signals[2] = {VERILOG_C_SCAN,Test_DMA_V};
+		u8 values[2] = {1,0};
+		set_MODE_AXI_Bits(signals,2,values);
 	}
 	//Enable SCAN_IN
 //	printf("Started Verilog Scan_In\n");
@@ -558,7 +534,7 @@ u8 verilog_scan_in(u8* scan_data, u8 scan_id, u16 scan_len){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Wait for SCAN_IN_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)4)) {
+	while(!(get_AXI_Bits(0) & (u8)8)) {
 		// do nothing
 	}
 	//Disable SCAN_IN
@@ -648,9 +624,9 @@ u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 	//Call Scan out Verilog Enable Here. And wait for it to complete.
 	//set verilog scan = 1 and NCLK = 255
 	{
-		u8 signals[10] = {VERILOG_C_SCAN,NCLK_0_V,NCLK_1_V,NCLK_2_V,NCLK_3_V,NCLK_4_V,NCLK_5_V,NCLK_6_V,NCLK_7_V,Test_DMA_V};
-		u8 values[10] = {1,1,0,0,0,0,0,0,0,0};
-		set_MODE_AXI_Bits(signals,10,values);
+		u8 signals[2] = {VERILOG_C_SCAN,Test_DMA_V};
+		u8 values[2] = {1,0};
+		set_MODE_AXI_Bits(signals,2,values);
 	}
 	//Enable SCAN_OUT
 	{
@@ -660,7 +636,7 @@ u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 	}
 //	printf("Started Verilog Scan_Out\n");
 	//Wait for SCAN_OUT_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)8)) {
+	while(!(get_AXI_Bits(0) & (u8)16)) {
 		// do nothing
 	}
 	//Disable SCAN_OUT
@@ -713,8 +689,8 @@ u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 
 //Flush WL Scan Chain.And insert one 1.This needs to be done before Write.
 u8 flush_wl_sc(){
-	u8 flush_array[148] = {0};
-	flush_array[145] = 8; // insert at the beginning of the scan chain
+	u8 flush_array[192] = {0};
+	flush_array[191] = 1; // insert at the beginning of the scan chain
 	//flush_array[144] = 8;
 	verilog_scan_in(flush_array,WL_SC,GLOBAL_SM_DATA.scan_len[WL_SC]);
 	/* Alternative (Slower) C-Scan-In
@@ -763,7 +739,7 @@ u8 flush_wl_sc(){
 }
 
 u8 write_SRAM_WL(u16 wl, u8* write_data){
-	//Write data into write scan chain => 270bits => 36 bytes (DMA exchange happens in 4byte-words)
+	//Write data into write scan chain => 200bits => 28 bytes (DMA exchange happens in 4byte-words)
 	verilog_scan_in(write_data,WRITE_DATA_SC,GLOBAL_SM_DATA.scan_len[WRITE_DATA_SC]);
 	//Do Write EN
 	{
@@ -793,7 +769,7 @@ u8 write_SRAM_WL(u16 wl, u8* write_data){
 }
 
 u8 write_SRAM_WL_Verilog(u16 wl, u8* write_data){
-	//Write data into write scan chain => 270bits => 36 bytes (DMA exchange happens in 4byte-words)
+	//Write data into write scan chain => 200bits => 28 bytes (DMA exchange happens in 4byte-words)
 
 	verilog_scan_in(write_data,WRITE_DATA_SC,GLOBAL_SM_DATA.scan_len[WRITE_DATA_SC]);
 	//Do Verilog Write EN
@@ -804,7 +780,7 @@ u8 write_SRAM_WL_Verilog(u16 wl, u8* write_data){
 	}
 
 	//Wait for it to finish
-	while(!(get_AXI_Bits(0) & (u8)16)) {
+	while(!(get_AXI_Bits(0) & (u8)32)) {
 		// do nothing
 	}
 
@@ -859,12 +835,12 @@ u8 write_SRAM_Full(u8* write_data){
 	}
 	//Flush the wordline scan chain.
 	flush_wl_sc();
-	//Write data will be in packets of 36bytes * 1164(number of wordlines). Ensure this in python
+	//Write data will be in packets of 28bytes * 1536(number of wordlines). Ensure this in python
 	for(u16 wl = 0; wl < NUM_WL; wl++){
 		//Write one WL
-		// 270 cells per WL
-		// padded to 288 (36 bytes)
-		write_SRAM_WL_Verilog(wl,write_data+wl*36);
+		// 200 cells per WL
+		// padded to 224 (28 bytes)
+		write_SRAM_WL_Verilog(wl,write_data+wl*28);
 		//Move WL by 1
 		move_WL_SC();
 		//Last iteration will have WL_SCAN chain flushed out
@@ -876,7 +852,7 @@ u8 write_SRAM_Full(u8* write_data){
 u8 write_SRAM_Masked(u8* write_data){
 	//Flush the wordline scan chain.
 	flush_wl_sc();
-	//Write data will be in packets of 36bytes * 1164(number of wordlines). Ensure this in python
+	//Write data will be in packets of 28bytes * 1536(number of wordlines). Ensure this in python
 	u16 mac_wl = 0;
 	u16 calib_wl_ndx = 0;
 	for(u16 wl = 0; wl < NUM_WL; wl++){
@@ -884,7 +860,7 @@ u8 write_SRAM_Masked(u8* write_data){
 
 			//Write one WL
 //			DEBUG_PRINT("Written WL = %d\n",wl);
-			write_SRAM_WL_Verilog(wl,write_data+mac_wl*36);
+			write_SRAM_WL_Verilog(wl,write_data+mac_wl*28);
 			mac_wl ++;
 
 		} else{
@@ -892,7 +868,7 @@ u8 write_SRAM_Masked(u8* write_data){
 			{
 				//Write one WL
 //				DEBUG_PRINT("Written WL = %d\n",wl);
-				write_SRAM_WL_Verilog(wl,write_data+mac_wl*36);
+				write_SRAM_WL_Verilog(wl,write_data+mac_wl*28);
 				mac_wl ++;
 			}
 			else{
@@ -913,7 +889,7 @@ u8 write_SRAM_Masked(u8* write_data){
 u8 write_SRAM_Calib(u8* write_data){//12 calib WLs ()
 	//Flush the wordline scan chain.
 	flush_wl_sc();
-	//Write data will be in packets of 36bytes * 1164(number of wordlines). Ensure this in python
+	//Write data will be in packets of 28bytes * 1536(number of wordlines). Ensure this in python
 	u16 calib_wl_idx = 0;
 	for(u16 wl = 0; wl < NUM_WL; wl++){
 		if(calib_wl_idx == 12) {
@@ -924,7 +900,7 @@ u8 write_SRAM_Calib(u8* write_data){//12 calib WLs ()
 		{
 			//Write one WL
 //			DEBUG_PRINT("Written WL = %d\n",wl);
-			write_SRAM_WL_Verilog(wl,write_data+calib_wl_idx*36);
+			write_SRAM_WL_Verilog(wl,write_data+calib_wl_idx*28);
 			calib_wl_idx++;
 		}
 		else{
@@ -984,15 +960,15 @@ u16 read_SRAM_WL(u16 wl){
 		}
 		//Turn off WL and Give CLK_SA to sample the output -> Active Low
 		{
-			u8 signals[2] = {WL_EN,CLK_SA};
-			u8 values[2] = {0,0};
-			set_AXI_Bits(signals,2,values);
+			u8 signals[3] = {WL_EN,CLK_SA,READ_EN};
+			u8 values[3] = {0,0,1};
+			set_AXI_Bits(signals,3,values);
 		}
 		//Turn off SA and CLK_SAMPLE both active low
 		{
-			u8 signals[2] = {SA_EN,CLK_SA};
-			u8 values[2] = {1,1};
-			set_AXI_Bits(signals,2,values);
+			u8 signals[3] = {SA_EN,CLK_SA,READ_EN};
+			u8 values[3] = {1,1,0};
+			set_AXI_Bits(signals,3,values);
 		}
 	}
 	//Select Scan Chain
@@ -1117,18 +1093,18 @@ u8 fast_IMC(){
 u8 fast_IMC_EXT(){
 	// Preset the IMC Mode to External
 	{
-//		printf("Preset the IMC_Mode to External Settings\n");
-		u8 signals[3] = {IMC_Mode, Ext_IMC_EN, stepIMC_EN};
-		u8 values[3] = {1, 0, 0};
-		set_MODE_AXI_Bits(signals,3,values);
+//		printf("Preset the IMC_Mode to External Settings, EX_IMC_EN is for standalone wrapper \n");
+		u8 signals[2] = {IMC_Mode, Ext_IMC_EN};
+		u8 values[2] = {1, 0};
+		set_MODE_AXI_Bits(signals,2,values);
 	}
 	//Turn on required signals
-	{
-//		printf("Turn on the InputEN_DAC\n");
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {1};
-		set_AXI_Bits(signals,1,values);
-	}
+// 	{
+// //		printf("Turn on the InputEN_DAC\n");
+// 		u8 signals[1] = {InputEN_DAC};
+// 		u8 values[1] = {1};
+// 		set_AXI_Bits(signals,1,values);
+// 	}
 	//Enable FAST_IMC
 	{
 //		printf("Turn ON Fast IMC EN\n");
@@ -1137,7 +1113,7 @@ u8 fast_IMC_EXT(){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Wait for FAST_IMC_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)32)){
+	while(!(get_AXI_Bits(0) & (u8)64)){
 		// Do Nothing
 	}
 	//sleep(1); //Dummy sleep
@@ -1148,11 +1124,11 @@ u8 fast_IMC_EXT(){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Turn off required signals
-	{
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {0};
-		set_AXI_Bits(signals,1,values);
-	}
+	// {
+	// 	u8 signals[1] = {InputEN_DAC};
+	// 	u8 values[1] = {0};
+	// 	set_AXI_Bits(signals,1,values);
+	// }
 	//DEBUG_PRINT("Verilog FAST_IMC Done\n");
 	{ // RESET IMC_Mode
 		u8 signals[1] = {IMC_Mode};
@@ -1458,23 +1434,23 @@ u8 compare_data(u8* data, u16 len, u8 key){
 
 //Write all 0, Read 0 write 1 read 1 and move on.
 u8 marching_Pattern_SRAM(){
-	u8 zero_sram_array[36*1164] = {0}; //Zero array to initialize SRAM.
-	u8 one_wl_array[36]; //All ones array to write in WL
-	memset(one_wl_array, 0xFF, 36); // Fill with 255 (all ones)
+	u8 zero_sram_array[28*1536] = {0}; //Zero array to initialize SRAM.
+	u8 one_wl_array[28]; //All ones array to write in WL
+	memset(one_wl_array, 0xFF, 28); // Fill with 255 (all ones)
 	//Call Write SRAM -> Initialize to zero
 	write_SRAM_Full(zero_sram_array);
 	flush_wl_sc(); // this function flushes the scan chain and inserts a single '1' at the starting position
 
 	//Now for each WL read 0, Write 1 and read 1
-	printf("WL0 -> WL1163\n");
+	printf("WL0 -> WL1535\n");
 	int test_passed = 1;
 	for(u16 wl = 0; wl < NUM_WL; wl++){
 		//Read the data and check if all zeros
 		read_SRAM_WL(wl);
 
-		GLOBAL_SM_DATA.dma_scanout_buffer[33] &= 0x3F;
-		// replace GLOBAL_SM_DATA.scan_len[SA_OUT_SC]/8 by 34
-		u8 zero_match = compare_data(GLOBAL_SM_DATA.dma_scanout_buffer,34,0);
+		//GLOBAL_SM_DATA.dma_scanout_buffer[24] &= 0xFF;
+		// reading 0 from first 25 bytes which is 200bits
+		u8 zero_match = compare_data(GLOBAL_SM_DATA.dma_scanout_buffer,25,0);
 		if(!zero_match){
 			printf("Zero read doesn't match for WL = %d\n",wl);
 			test_passed = 0;
@@ -1487,8 +1463,8 @@ u8 marching_Pattern_SRAM(){
 		//Read one from WL and check if all ones
 		read_SRAM_WL(wl);
 
-		GLOBAL_SM_DATA.dma_scanout_buffer[33] |= 0xC0; // set the last 2 MSB to 1
-		u8 one_match = compare_data(GLOBAL_SM_DATA.dma_scanout_buffer,34,255);
+		//GLOBAL_SM_DATA.dma_scanout_buffer[33] |= 0xC0; // set the last 2 MSB to 1
+		u8 one_match = compare_data(GLOBAL_SM_DATA.dma_scanout_buffer,25,255);
 		if(!one_match){
 			printf("One read doesn't match for WL = %d\n",wl);
 			test_passed = 0;
@@ -1498,7 +1474,7 @@ u8 marching_Pattern_SRAM(){
 		move_WL_SC();
 	}
 	if(test_passed) {
-		printf("Marchine SRAM Test Passed!:)\n");
+		printf("Marching SRAM Test Passed!:)\n");
 	} else {
 		printf("Marching SRAM Test Failed :(\n");
 	}

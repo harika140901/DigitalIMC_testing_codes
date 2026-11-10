@@ -46,8 +46,8 @@ module IMC_ScanOut(
     ////////////// CONSTANTS //////////////
     localparam N_bits    = 475;
     // Scan chain lengths from the 2026 test protocol:
-    // 1 = input scan chain 2 = 1152
-    // 2 = input scan chain 1 = 1152
+    // 1 = input scan chain 1 = 1152
+    // 2 = input scan chain 2 = 1152
     // 3 = output scan chain  = 475
     // 4 = WL scan chain      = 1536
     // 5 = read               = 200
@@ -87,8 +87,7 @@ module IMC_ScanOut(
         .COMPUTE_EN(COMPUTE_EN),
         .MUX_SEL(MUX_SEL),
         .CLK_CAPTURE(CLK_CAPTURE),
-        .DONE(Ext_IMC_DONE_final),
-        .IMC_DONE(Ext_IMC_DONE)
+        .DONE(Ext_IMC_DONE_final)
     );
 
     wire IMC_DONE_SEL;

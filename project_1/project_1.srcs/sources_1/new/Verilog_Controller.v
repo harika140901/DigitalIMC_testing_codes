@@ -96,7 +96,7 @@ module Verilog_Controller(
     output [3:0] SAMPLE_EDGE_TIME,
 
     // Renamed to avoid AXI inference issues
-    input  [31:0] scan_mode_setting_in,
+    input  [15:0] scan_mode_setting_in,
     input  [2:0]  dig_out,
 
     ////////////////////////////////////////////////////////
@@ -132,22 +132,17 @@ module Verilog_Controller(
     wire [2:0] SCN_ID       = scan_mode_setting_in[3:1];
     wire RECV_SCN_IN_DATA   = scan_mode_setting_in[4];
     wire SEND_SCN_OUT_DATA  = scan_mode_setting_in[5];  
-    wire SEND_IMC_DATA      = scan_mode_setting_in[6]; 
-    wire SCAN_IN_EN         = scan_mode_setting_in[7];
-    wire SCAN_OUT_EN        = scan_mode_setting_in[8];
-    wire TEST_DMA           = scan_mode_setting_in[9];
-    wire [7:0] N_CYCLES     = scan_mode_setting_in[17:10];
-    wire TOPS_EN            = scan_mode_setting_in[18];
-    wire TOPS_STOP          = scan_mode_setting_in[19];
+    wire SCAN_IN_EN         = scan_mode_setting_in[6];
+    wire SCAN_OUT_EN        = scan_mode_setting_in[7];
+    wire TEST_DMA           = scan_mode_setting_in[8];
+    wire TOPS_EN            = scan_mode_setting_in[9];
+    wire TOPS_STOP          = scan_mode_setting_in[10];
     // FAST IMC SIGNALS (will be used later)
-    wire WRITE_SRAM_EN      = scan_mode_setting_in[20];
-    wire FAST_IMC_EN        = scan_mode_setting_in[21];  //scanning out every 5 cycles of IMC compute
-    wire SEND_IMC_DATA      = scan_mode_setting_in[22];
-    wire IMC_Mode           = scan_mode_setting_in[23]; // this signal will tell in which mode to perform IMC (Internal or External)
-    wire Ext_IMC_EN         = scan_mode_setting_in[24];
-    
-    wire stepIMC_EN         = scan_mode_setting_in[25];
-    wire [5:0] active_cols  = scan_mode_setting_in[31:26];
+    wire WRITE_SRAM_EN      = scan_mode_setting_in[11];
+    wire FAST_IMC_EN        = scan_mode_setting_in[12];  //scanning out every 5 cycles of IMC compute
+    wire SEND_IMC_DATA      = scan_mode_setting_in[13];
+    wire IMC_Mode           = scan_mode_setting_in[14]; // this signal will tell in which mode to perform IMC (Internal or External)
+    wire Ext_IMC_EN         = scan_mode_setting_in[15];
 
     ////////////////////////////////////////////////////////
     // AXI-Stream DMA Stuff (m-axis needs to be muxed b/w IMC and SCN_CHN)
@@ -248,7 +243,6 @@ module Verilog_Controller(
         .EN(SCAN_IN_EN),
         .CLK(clk),
         .scan_in_buff(SCAN_IN_BUFF),
-//        .scan_len_bits((stepIMC_EN) ? {5'b0,active_cols} : SCAN_LEN_BITS),
         .scan_len_bits(SCAN_LEN_BITS),
         .SCAN_IN(SCAN_IN_VER),
         .CLK_A(CLK_A_SCNIN),
@@ -293,10 +287,10 @@ module Verilog_Controller(
     // IMC OUT BLOCK (for fast IMC output reading)
     ////////////////////////////////////////////////////////
 
-    wire SCAN_IN_IMC, IN_EN_IMC, CLK_A_IMC, CLK_B_IMC, BANK_SEL_IMC, DFF_RST_IMC, FAST_IMC_DONE, IMC_SCNOUT_DONE, FAST_IMC_DONE;
+    wire SCAN_IN_IMC, IN_EN_IMC, CLK_A_IMC, CLK_B_IMC, BANK_SEL_IMC, DFF_RST_IMC, IMC_SCNOUT_DONE, FAST_IMC_DONE;
     wire SCAN_SEL_IMC;
     wire COMPUTE_EN_IMC, MUX_SEL_IMC, CLK_CAPTURE_IMC;
-    assign FAST_IMC_DONE = (Ext_IMC_EN) ? EXT_IMC_DONE : ((FAST_IMC_EN) ? IMC_SCNOUT_DONE : imc_done_scan_out);
+    assign FAST_IMC_DONE = (Ext_IMC_EN) ? EXT_IMC_DONE_final : ((FAST_IMC_EN) ? IMC_SCNOUT_DONE : imc_done_scan_out);
     IMC_ScanOut u1_imc_scnout (
         .CLK(clk),
         .EN(FAST_IMC_EN),
@@ -316,13 +310,13 @@ module Verilog_Controller(
     );
     
     wire COMPUTE_EN0, MUX_SEL0, CLK_CAPTURE0;
-    wire EXT_IMC_DONE_final, EXT_IMC_DONE;
+    wire EXT_IMC_DONE_final;
     IMC_Wrapper standalone_IMC_EXT (
         .CLK(clk),
         .EN(Ext_IMC_EN),
         .cyc_one(1'b1),
         .COMPUTE_EN(COMPUTE_EN0), .MUX_SEL(MUX_SEL0), .CLK_CAPTURE(CLK_CAPTURE0),
-        .DONE(EXT_IMC_DONE_final), .IMC_DONE(EXT_IMC_DONE)
+        .DONE(EXT_IMC_DONE_final)
     );
 
 
