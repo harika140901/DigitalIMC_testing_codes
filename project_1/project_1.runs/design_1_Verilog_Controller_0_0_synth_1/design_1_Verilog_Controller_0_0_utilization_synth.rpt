@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Oct 24 16:49:57 2026
+| Date         : Wed Nov 11 19:37:51 2026
 | Host         : ams34 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_Verilog_Controller_0_0_utilization_synth.rpt -pb design_1_Verilog_Controller_0_0_utilization_synth.pb
 | Design       : design_1_Verilog_Controller_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1789 |     0 |     53200 |  3.36 |
-|   LUT as Logic          | 1789 |     0 |     53200 |  3.36 |
+| Slice LUTs*             | 1790 |     0 |     53200 |  3.36 |
+|   LUT as Logic          | 1790 |     0 |     53200 |  3.36 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 1710 |     0 |    106400 |  1.61 |
-|   Register as Flip Flop | 1710 |     0 |    106400 |  1.61 |
+| Slice Registers         | 1712 |     0 |    106400 |  1.61 |
+|   Register as Flip Flop | 1712 |     0 |    106400 |  1.61 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                |  396 |     0 |     26600 |  1.49 |
 | F8 Muxes                |  101 |     0 |     13300 |  0.76 |
@@ -56,7 +56,7 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 5     |          Yes |         Set |            - |
+| 7     |          Yes |         Set |            - |
 | 1705  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
@@ -148,15 +148,15 @@ Table of Contents
 +----------+------+---------------------+
 | FDRE     | 1705 |        Flop & Latch |
 | LUT6     | 1253 |                 LUT |
-| LUT4     |  442 |                 LUT |
+| LUT4     |  435 |                 LUT |
 | MUXF7    |  396 |               MuxFx |
 | MUXF8    |  101 |               MuxFx |
-| LUT2     |   68 |                 LUT |
-| LUT3     |   41 |                 LUT |
-| LUT5     |   38 |                 LUT |
+| LUT2     |   67 |                 LUT |
+| LUT3     |   43 |                 LUT |
+| LUT5     |   39 |                 LUT |
 | CARRY4   |   18 |          CarryLogic |
 | LUT1     |   14 |                 LUT |
-| FDSE     |    5 |        Flop & Latch |
+| FDSE     |    7 |        Flop & Latch |
 +----------+------+---------------------+
 
 

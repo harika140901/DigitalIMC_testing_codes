@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Oct 24 16:44:16 2026
+//Date        : Wed Nov 11 19:37:13 2026
 //Host        : ams34 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -265,7 +265,7 @@ module design_1
   wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire [31:0]axi_gpio_0_gpio_io_o;
   wire [1:0]axi_gpio_1_gpio_io_o;
-  wire [31:0]axi_gpio_4_gpio_io_o;
+  wire [15:0]axi_gpio_4_gpio_io_o;
   wire [31:0]axi_interconnect_1_M00_AXI_ARADDR;
   wire axi_interconnect_1_M00_AXI_ARREADY;
   wire [0:0]axi_interconnect_1_M00_AXI_ARVALID;
@@ -566,7 +566,7 @@ module design_1
         .s_axi_wstrb(axi_interconnect_1_M04_AXI_WSTRB),
         .s_axi_wvalid(axi_interconnect_1_M04_AXI_WVALID));
   design_1_DIG_DEBUG_AXI_OUT_BUS_1_0 DIG_DEBUG_AXI_OUT_BUS_1
-       (.gpio_io_i({TO_FMC_0_DIG_DEBUG_AXI_OUT_1,TO_FMC_0_DIG_DEBUG_AXI_OUT_1}),
+       (.gpio_io_i(TO_FMC_0_DIG_DEBUG_AXI_OUT_1),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_interconnect_1_M05_AXI_ARADDR[8:0]),
         .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),

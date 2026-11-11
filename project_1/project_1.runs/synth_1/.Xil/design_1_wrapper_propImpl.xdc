@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/constrs_1/new/constraints_v1.xdc rfile:../../../project_1.srcs/constrs_1/new/constraints_v1.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/constrs_1/new/constraints_v1.xdc rfile:../../../project_1.srcs/constrs_1/new/constraints_v1.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:25 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN B16 [get_ports FMC_B16]
 set_property src_info {type:XDC file:1 line:26 export:INPUT save:INPUT read:READ} [current_design]

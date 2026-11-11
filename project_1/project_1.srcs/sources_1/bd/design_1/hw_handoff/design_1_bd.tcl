@@ -230,7 +230,7 @@ proc create_root_design { parentCell } {
   set DIG_DEBUG_AXI_OUT_BUS_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 DIG_DEBUG_AXI_OUT_BUS_1 ]
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {1} \
-   CONFIG.C_GPIO_WIDTH {2} \
+   CONFIG.C_GPIO_WIDTH {1} \
    CONFIG.C_INTERRUPT_PRESENT {0} \
    CONFIG.C_IS_DUAL {0} \
  ] $DIG_DEBUG_AXI_OUT_BUS_1
@@ -239,6 +239,7 @@ proc create_root_design { parentCell } {
   set SCAN_MODE_SETTINGS_AXI_BUS [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 SCAN_MODE_SETTINGS_AXI_BUS ]
   set_property -dict [ list \
    CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {16} \
    CONFIG.C_INTERRUPT_PRESENT {0} \
  ] $SCAN_MODE_SETTINGS_AXI_BUS
 

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_SCAN_MODE_SETTINGS_AXI_BUS_0_synth_1'
+HD_PWD='D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_SCAN_MODE_SETTINGS_AXI_BUS_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Oct 24 16:49:32 2026
-# Process ID: 2232
-# Current directory: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1
+# Start of session at: Wed Nov 11 19:37:27 2026
+# Process ID: 63364
+# Current directory: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1
 # Command line: vivado.exe -log design_1_Verilog_Controller_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_Verilog_Controller_0_0.tcl
-# Log file: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.vds
-# Journal file: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1\vivado.jou
+# Log file: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.vds
+# Journal file: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_Verilog_Controller_0_0.tcl -notrace
 Command: synth_design -top design_1_Verilog_Controller_0_0 -part xc7z020clg484-1 -mode out_of_context
@@ -15,47 +15,40 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27080 
-WARNING: [Synth 8-976] SEND_IMC_DATA has already been declared [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:145]
-WARNING: [Synth 8-2654] second declaration of SEND_IMC_DATA ignored [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:145]
-INFO: [Synth 8-994] SEND_IMC_DATA is declared here [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:135]
-WARNING: [Synth 8-976] FAST_IMC_DONE has already been declared [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:296]
-WARNING: [Synth 8-2654] second declaration of FAST_IMC_DONE ignored [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:296]
-INFO: [Synth 8-994] FAST_IMC_DONE is declared here [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:296]
+INFO: Helper process launched with PID 46756 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 385.777 ; gain = 111.551
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 373.387 ; gain = 104.207
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_Verilog_Controller_0_0' [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/synth/design_1_Verilog_Controller_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'Verilog_Controller' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:22]
-INFO: [Synth 8-6157] synthesizing module 'dma_recv_data' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'design_1_Verilog_Controller_0_0' [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/synth/design_1_Verilog_Controller_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'Verilog_Controller' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:22]
+INFO: [Synth 8-6157] synthesizing module 'dma_recv_data' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:1]
 	Parameter BUFF_SIZE bound to: 1536 - type: integer 
 	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element recv_len_reg was removed.  [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'dma_recv_data' (1#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:1]
-INFO: [Synth 8-6157] synthesizing module 'dma_send_data' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
+WARNING: [Synth 8-6014] Unused sequential element recv_len_reg was removed.  [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'dma_recv_data' (1#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dma_send_data' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
 	Parameter BUFF_SIZE bound to: 1536 - type: integer 
 	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'dma_send_data' (2#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
-INFO: [Synth 8-6157] synthesizing module 'dma_send_data__parameterized0' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dma_send_data' (2#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dma_send_data__parameterized0' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
 	Parameter BUFF_SIZE bound to: 480 - type: integer 
 	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'dma_send_data__parameterized0' (2#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
-INFO: [Synth 8-6157] synthesizing module 'scan_in_verilog' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_in_verilog.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'scan_in_verilog' (3#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_in_verilog.v:2]
-INFO: [Synth 8-6157] synthesizing module 'scan_out_verilog' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'scan_out_verilog' (4#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:1]
-INFO: [Synth 8-6157] synthesizing module 'TOPS_BLOCK' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/TOPS_BLOCK.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'TOPS_BLOCK' (5#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/TOPS_BLOCK.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Write_SRAM_WL' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Write_SRAM_WL.v:1]
-	Parameter N_CYCLES bound to: 8'b00000001 
+INFO: [Synth 8-6155] done synthesizing module 'dma_send_data__parameterized0' (2#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_send_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'scan_in_verilog' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_in_verilog.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'scan_in_verilog' (3#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_in_verilog.v:2]
+INFO: [Synth 8-6157] synthesizing module 'scan_out_verilog' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'scan_out_verilog' (4#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:1]
+INFO: [Synth 8-6157] synthesizing module 'TOPS_BLOCK' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/TOPS_BLOCK.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'TOPS_BLOCK' (5#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/TOPS_BLOCK.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Write_SRAM_WL' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Write_SRAM_WL.v:1]
 	Parameter IDLE bound to: 3'b000 
 	Parameter WEN_ON bound to: 3'b001 
 	Parameter WL_EN_ON bound to: 3'b010 
 	Parameter WL_EN_OFF bound to: 3'b011 
 	Parameter WEN_OFF bound to: 3'b100 
 	Parameter FINISH bound to: 3'b101 
-INFO: [Synth 8-6155] done synthesizing module 'Write_SRAM_WL' (6#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Write_SRAM_WL.v:1]
-INFO: [Synth 8-6157] synthesizing module 'IMC_ScanOut' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Write_SRAM_WL' (6#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Write_SRAM_WL.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IMC_ScanOut' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:22]
 	Parameter N_bits bound to: 475 - type: integer 
 	Parameter ST_IDLE bound to: 4'b0000 
 	Parameter ST_IMC_START bound to: 4'b0001 
@@ -67,50 +60,34 @@ INFO: [Synth 8-6157] synthesizing module 'IMC_ScanOut' [C:/Users/dsdl/Documents/
 	Parameter ST_SCAN_OUT bound to: 4'b0111 
 	Parameter ST_NEXT bound to: 4'b0111 
 	Parameter ST_DONE bound to: 4'b1000 
-INFO: [Synth 8-6157] synthesizing module 'IMC_Wrapper' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/IMC_Wrapper.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IMC_Wrapper' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/IMC_Wrapper.v:3]
 	Parameter IDLE bound to: 3'b000 
 	Parameter COMPUTE_EN_ON bound to: 3'b001 
 	Parameter MUX_SEL_HI bound to: 3'b010 
 	Parameter COMPUTE_EN_OFF bound to: 3'b011 
 	Parameter CLK_CAPTURE_LOW bound to: 3'b100 
 	Parameter CLK_CAPTURE_HI bound to: 3'b101 
-INFO: [Synth 8-6155] done synthesizing module 'IMC_Wrapper' (7#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/IMC_Wrapper.v:3]
-WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:134]
-INFO: [Synth 8-6155] done synthesizing module 'IMC_ScanOut' (8#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:22]
-WARNING: [Synth 8-689] width (1) of port connection 'SCAN_SEL' does not match port width (3) of module 'IMC_ScanOut' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:311]
-WARNING: [Synth 8-3848] Net WEN in module/entity Verilog_Controller does not have driver. [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:67]
-WARNING: [Synth 8-3848] Net CLKA in module/entity Verilog_Controller does not have driver. [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:75]
-WARNING: [Synth 8-3848] Net CLKB in module/entity Verilog_Controller does not have driver. [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:76]
-WARNING: [Synth 8-3848] Net SCAN_OUT in module/entity Verilog_Controller does not have driver. [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:262]
-INFO: [Synth 8-6155] done synthesizing module 'Verilog_Controller' (9#1) [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_Verilog_Controller_0_0' (10#1) [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/synth/design_1_Verilog_Controller_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'IMC_Wrapper' (7#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/IMC_Wrapper.v:3]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'IMC_ScanOut' (8#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/IMC_ScanOut.v:22]
+WARNING: [Synth 8-689] width (1) of port connection 'SCAN_SEL' does not match port width (3) of module 'IMC_ScanOut' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:305]
+WARNING: [Synth 8-3848] Net WEN in module/entity Verilog_Controller does not have driver. [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:67]
+WARNING: [Synth 8-3848] Net CLKA in module/entity Verilog_Controller does not have driver. [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:75]
+WARNING: [Synth 8-3848] Net CLKB in module/entity Verilog_Controller does not have driver. [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:76]
+WARNING: [Synth 8-3848] Net SCAN_OUT in module/entity Verilog_Controller does not have driver. [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:256]
+INFO: [Synth 8-6155] done synthesizing module 'Verilog_Controller' (9#1) [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Verilog_Controller_0_0' (10#1) [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/synth/design_1_Verilog_Controller_0_0.v:58]
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port WEN
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port CLKA
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port CLKB
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port WEN_C
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port CLK_A_C
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port CLK_B_C
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[31]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[30]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[29]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[28]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[27]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[26]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[25]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[17]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[16]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[15]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[14]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[13]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[12]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[11]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[10]
-WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port scan_mode_setting_in[6]
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port dig_out[2]
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port dig_out[1]
 WARNING: [Synth 8-3331] design Verilog_Controller has unconnected port dig_out[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.527 ; gain = 157.301
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.707 ; gain = 162.527
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -119,16 +96,16 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin u_scn_out:SCAN_OUT to constant 0 [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:259]
-WARNING: [Synth 8-3295] tying undriven pin u1_imc_scnout:SCAN_OUT to constant 0 [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:300]
+WARNING: [Synth 8-3295] tying undriven pin u_scn_out:SCAN_OUT to constant 0 [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:253]
+WARNING: [Synth 8-3295] tying undriven pin u1_imc_scnout:SCAN_OUT to constant 0 [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/Verilog_Controller.v:294]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.527 ; gain = 157.301
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.707 ; gain = 162.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.527 ; gain = 157.301
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 431.707 ; gain = 162.527
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -137,29 +114,29 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 829.191 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 827.891 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 829.191 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 827.891 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 835.766 ; gain = 6.574
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 833.461 ; gain = 5.570
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'phase_reg' in module 'scan_in_verilog'
 INFO: [Synth 8-5544] ROM "CLK_B" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -174,10 +151,15 @@ INFO: [Synth 8-5544] ROM "i" won't be mapped to Block RAM because address size (
 INFO: [Synth 8-5544] ROM "phase" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "imc_done_scan_out" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Write_SRAM_WL'
-INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "WL_EN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "WEN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'IMC_Wrapper'
+INFO: [Synth 8-5544] ROM "DONE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "FSM_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CLK_CAPTURE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "COMPUTE_EN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'IMC_ScanOut'
 INFO: [Synth 8-5544] ROM "SCAN_IN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "DONE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -215,6 +197,16 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+           COMPUTE_EN_ON |                            00010 |                              001
+          CLK_CAPTURE_HI |                            00100 |                              101
+         CLK_CAPTURE_LOW |                            01000 |                              100
+          COMPUTE_EN_OFF |                            10000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'one-hot' in module 'IMC_Wrapper'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
                  ST_IDLE |                              000 |                             0000
             ST_IMC_START |                              001 |                             0001
              ST_IMC_WAIT |                              010 |                             0010
@@ -226,56 +218,50 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'IMC_ScanOut'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |Verilog_Controller__GB0 |           1|     38863|
-|2     |Verilog_Controller__GB1 |           1|     25590|
+|1     |Verilog_Controller__GB0 |           1|     38796|
+|2     |Verilog_Controller__GB1 |           1|     25469|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:35]
-INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
-INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
+INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:35]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 5     
 	   2 Input     11 Bit       Adders := 3     
 	   2 Input      9 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	             1536 Bit    Registers := 3     
 	              475 Bit    Registers := 1     
 	               32 Bit    Registers := 2     
 	               11 Bit    Registers := 3     
-	                8 Bit    Registers := 5     
-	                3 Bit    Registers := 4     
-	                1 Bit    Registers := 42    
+	                8 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 40    
 +---Muxes : 
 	   2 Input   1536 Bit        Muxes := 5     
 	   4 Input   1536 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 4     
 	   2 Input     11 Bit        Muxes := 3     
 	   5 Input     11 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   6 Input      8 Bit        Muxes := 1     
 	   5 Input      6 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 3     
-	   4 Input      3 Bit        Muxes := 2     
-	   7 Input      3 Bit        Muxes := 2     
 	   8 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 40    
+	   2 Input      1 Bit        Muxes := 37    
 	   4 Input      1 Bit        Muxes := 12    
-	   8 Input      1 Bit        Muxes := 12    
-	   7 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 8     
+	   8 Input      1 Bit        Muxes := 8     
 	   6 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -283,9 +269,9 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:35]
-INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
-INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
+INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:35]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/scan_out_verilog.v:23]
 Hierarchical RTL Component report 
 Module dma_recv_data 
 Detailed RTL Component Info : 
@@ -348,29 +334,15 @@ Detailed RTL Component Info :
 Module IMC_Wrapper__1 
 Detailed RTL Component Info : 
 +---Registers : 
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   4 Input      3 Bit        Muxes := 1     
-	   7 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 4     
 Module IMC_Wrapper 
 Detailed RTL Component Info : 
 +---Registers : 
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   4 Input      3 Bit        Muxes := 1     
-	   7 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 4     
 Module scan_out_verilog 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -397,15 +369,9 @@ Detailed RTL Component Info :
 	   8 Input      1 Bit        Muxes := 8     
 Module Write_SRAM_WL 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
-	   6 Input      8 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 4     
 Module dma_send_data__parameterized0 
 Detailed RTL Component Info : 
@@ -445,30 +411,23 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'write_ptr_reg[7:0]' into 'write_ptr_reg[7:0]' [C:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:27]
+INFO: [Synth 8-4471] merging register 'write_ptr_reg[7:0]' into 'write_ptr_reg[7:0]' [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/new/dma_receive_data.v:27]
 INFO: [Synth 8-5544] ROM "u_tops_block/imc_done_scan_out" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "u_write_sram/state" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port WEN
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port CLKA
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port CLKB
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port WEN_C
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port CLK_A_C
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port CLK_B_C
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[31]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[30]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[29]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[28]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[27]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[26]
-WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port scan_mode_setting_in[25]
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port dig_out[2]
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port dig_out[1]
 WARNING: [Synth 8-3331] design design_1_Verilog_Controller_0_0 has unconnected port dig_out[0]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/external_imc_controller/DONE_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/DONE_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (insti_0/\standalone_IMC_EXT/DONE_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (insti_1/\u1_imc_scnout/external_imc_controller/DONE_reg )
 INFO: [Synth 8-3886] merging instance 'insti_1/u1_imc_scnout/scan_sel_reg_reg[1]' (FDSE) to 'insti_1/u1_imc_scnout/scan_sel_reg_reg[0]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (insti_1/\u1_imc_scnout/scan_sel_reg_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/SCAN_IN_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/DONE_reg )
 INFO: [Synth 8-3886] merging instance 'insti_1/u1_imc_scnout/out_buf_reg[448]' (FDE) to 'insti_1/u1_imc_scnout/out_buf_reg[474]'
 INFO: [Synth 8-3886] merging instance 'insti_1/u1_imc_scnout/out_buf_reg[416]' (FDE) to 'insti_1/u1_imc_scnout/out_buf_reg[474]'
 INFO: [Synth 8-3886] merging instance 'insti_1/u1_imc_scnout/out_buf_reg[384]' (FDE) to 'insti_1/u1_imc_scnout/out_buf_reg[474]'
@@ -571,41 +530,41 @@ INFO: [Synth 8-3886] merging instance 'insti_1/u1_imc_scnout/out_buf_reg[198]' (
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/out_buf_reg[31] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |Verilog_Controller__GB0 |           1|      8874|
-|2     |Verilog_Controller__GB1 |           1|       407|
+|1     |Verilog_Controller__GB0 |           1|      8820|
+|2     |Verilog_Controller__GB1 |           1|       447|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 835.766 ; gain = 561.539
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 833.461 ; gain = 564.281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
-|1     |Verilog_Controller__GB0 |           1|      8874|
-|2     |Verilog_Controller__GB1 |           1|       407|
+|1     |Verilog_Controller__GB0 |           1|      8820|
+|2     |Verilog_Controller__GB1 |           1|       447|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -629,7 +588,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -642,7 +601,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -654,25 +613,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -690,63 +649,63 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |    18|
 |2     |LUT1   |    14|
-|3     |LUT2   |    68|
-|4     |LUT3   |    41|
-|5     |LUT4   |   442|
-|6     |LUT5   |    38|
+|3     |LUT2   |    67|
+|4     |LUT3   |    43|
+|5     |LUT4   |   435|
+|6     |LUT5   |    39|
 |7     |LUT6   |  1253|
 |8     |MUXF7  |   396|
 |9     |MUXF8  |   101|
 |10    |FDRE   |  1705|
-|11    |FDSE   |     5|
+|11    |FDSE   |     7|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+------------------------------+------------------------------+------+
 |      |Instance                      |Module                        |Cells |
 +------+------------------------------+------------------------------+------+
-|1     |top                           |                              |  4081|
-|2     |  inst                        |Verilog_Controller            |  4078|
-|3     |    standalone_IMC_EXT        |IMC_Wrapper                   |    18|
+|1     |top                           |                              |  4078|
+|2     |  inst                        |Verilog_Controller            |  4075|
+|3     |    standalone_IMC_EXT        |IMC_Wrapper                   |    15|
 |4     |    u1_imc_scnout             |IMC_ScanOut                   |    70|
 |5     |      external_imc_controller |IMC_Wrapper_0                 |    14|
 |6     |      u_imc_scanout           |scan_out_verilog_1            |    48|
 |7     |    u_recv                    |dma_recv_data                 |  3637|
 |8     |    u_scn_in                  |scan_in_verilog               |    72|
 |9     |    u_scn_out                 |scan_out_verilog              |    49|
-|10    |    u_send_imc                |dma_send_data__parameterized0 |    36|
+|10    |    u_send_imc                |dma_send_data__parameterized0 |    37|
 |11    |    u_send_scn                |dma_send_data                 |   157|
-|12    |    u_tops_block              |TOPS_BLOCK                    |    20|
-|13    |    u_write_sram              |Write_SRAM_WL                 |    15|
+|12    |    u_tops_block              |TOPS_BLOCK                    |    21|
+|13    |    u_write_sram              |Write_SRAM_WL                 |    13|
 +------+------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 837.266 ; gain = 563.039
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 838.176 ; gain = 568.996
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 837.266 ; gain = 158.801
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 837.266 ; gain = 563.039
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 838.176 ; gain = 167.242
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 838.176 ; gain = 568.996
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 515 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'design_1_Verilog_Controller_0_0' is not ideal for floorplanning, since the cellview 'dma_recv_data' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 837.266 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.176 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-176 Infos, 56 Warnings, 0 Critical Warnings and 0 Errors encountered.
+180 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 837.266 ; gain = 563.039
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 837.266 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 838.176 ; gain = 568.996
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.176 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 12 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 837.266 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.176 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_Verilog_Controller_0_0_utilization_synth.rpt -pb design_1_Verilog_Controller_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 24 16:49:57 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 11 19:37:51 2026...

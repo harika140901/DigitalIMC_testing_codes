@@ -156,7 +156,7 @@ output wire osc_EN;
 output wire [3 : 0] capturestart;
 output wire [3 : 0] div_ratio;
 output wire [3 : 0] SAMPLE_EDGE_TIME;
-input wire [31 : 0] scan_mode_setting_in;
+input wire [15 : 0] scan_mode_setting_in;
 input wire [2 : 0] dig_out;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF in:out, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)

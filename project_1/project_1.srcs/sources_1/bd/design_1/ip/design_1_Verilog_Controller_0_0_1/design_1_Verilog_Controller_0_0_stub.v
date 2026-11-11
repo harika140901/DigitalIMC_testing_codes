@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Oct 24 16:49:57 2026
+// Date        : Wed Nov 11 19:37:51 2026
 // Host        : ams34 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/design_1_Verilog_Controller_0_0_stub.v
+//               D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/design_1_Verilog_Controller_0_0_stub.v
 // Design      : design_1_Verilog_Controller_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -21,7 +21,7 @@ module design_1_Verilog_Controller_0_0(WL_EN_C, SA_EN_C, BL_PCHG_C, CLK_SA_C, RE
   SCN_IN, COMPUTE_EN, DFF_RST, MUX_OUT_PAD, CONTROL_EN, CLK_OUT_PAD, osc_EN, capturestart, 
   div_ratio, SAMPLE_EDGE_TIME, scan_mode_setting_in, dig_out, clk, in_tvalid, in_tlast, in_tdata, 
   in_tready, out_tready, out_tvalid, out_tlast, out_tdata, SCAN_DONE_FLAGS)
-/* synthesis syn_black_box black_box_pad_pin="WL_EN_C,SA_EN_C,BL_PCHG_C,CLK_SA_C,READ_EN_C,WEN_C,CS_B_C[1:0],SCN_SEL_C[2:0],CLK_A_C,CLK_B_C,IN_EN_C,SCN_IN_C,COMPUTE_EN_C,DFF_RST_C,MUX_OUT_PAD_C,CONTROL_EN_C,CLK_OUT_PAD_C,osc_EN_C,capturestart_C[3:0],div_ratio_C[3:0],SAMPLE_EDGE_TIME_C[3:0],WL_EN,SA_EN,BL_PCHG,CLK_SA,WEN,READ_EN,CS_B[1:0],SCN_SEL[2:0],CLKA,CLKB,IN_EN,SCN_IN,COMPUTE_EN,DFF_RST,MUX_OUT_PAD,CONTROL_EN,CLK_OUT_PAD,osc_EN,capturestart[3:0],div_ratio[3:0],SAMPLE_EDGE_TIME[3:0],scan_mode_setting_in[31:0],dig_out[2:0],clk,in_tvalid,in_tlast,in_tdata[31:0],in_tready,out_tready,out_tvalid,out_tlast,out_tdata[31:0],SCAN_DONE_FLAGS[3:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="WL_EN_C,SA_EN_C,BL_PCHG_C,CLK_SA_C,READ_EN_C,WEN_C,CS_B_C[1:0],SCN_SEL_C[2:0],CLK_A_C,CLK_B_C,IN_EN_C,SCN_IN_C,COMPUTE_EN_C,DFF_RST_C,MUX_OUT_PAD_C,CONTROL_EN_C,CLK_OUT_PAD_C,osc_EN_C,capturestart_C[3:0],div_ratio_C[3:0],SAMPLE_EDGE_TIME_C[3:0],WL_EN,SA_EN,BL_PCHG,CLK_SA,WEN,READ_EN,CS_B[1:0],SCN_SEL[2:0],CLKA,CLKB,IN_EN,SCN_IN,COMPUTE_EN,DFF_RST,MUX_OUT_PAD,CONTROL_EN,CLK_OUT_PAD,osc_EN,capturestart[3:0],div_ratio[3:0],SAMPLE_EDGE_TIME[3:0],scan_mode_setting_in[15:0],dig_out[2:0],clk,in_tvalid,in_tlast,in_tdata[31:0],in_tready,out_tready,out_tvalid,out_tlast,out_tdata[31:0],SCAN_DONE_FLAGS[3:0]" */;
   input WL_EN_C;
   input SA_EN_C;
   input BL_PCHG_C;
@@ -64,7 +64,7 @@ module design_1_Verilog_Controller_0_0(WL_EN_C, SA_EN_C, BL_PCHG_C, CLK_SA_C, RE
   output [3:0]capturestart;
   output [3:0]div_ratio;
   output [3:0]SAMPLE_EDGE_TIME;
-  input [31:0]scan_mode_setting_in;
+  input [15:0]scan_mode_setting_in;
   input [2:0]dig_out;
   input clk;
   input in_tvalid;
