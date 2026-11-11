@@ -15,7 +15,7 @@
 #define MAX_SEND_BUFF 1446*2 //Define the packet size
 #define SUCCESS_REPLY (u8)128
 #define FAIL_REPLY (u8)0
-#define DIG_IN_SIG_LEN 34
+#define DIG_IN_SIG_LEN 33
 
 struct WRTIE_TCP_DATA{
 	void* Data_Ptr; //Function send data pointer

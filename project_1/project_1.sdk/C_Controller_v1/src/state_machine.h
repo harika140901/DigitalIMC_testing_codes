@@ -73,12 +73,12 @@
 #define SCAN_OUT_EN_V 	7
 #define Test_DMA_V 		8
 #define TOPS_EN_V 		9
-#define TOPS_STOP_V 	10
+#define TOPS_STOP_V   	10
 #define WRITE_SRAM_EN_V 11
 #define FAST_IMC_EN_V 	12
 #define SEND_IMC_DATA_V 13
-#define IMC_Mode 		14
-#define Ext_IMC_EN		15
+#define IMC_Mode_V 		14
+#define Ext_IMC_EN_V	15
 
 //Create a structure to store the state machine data.
 struct SM_DATA{

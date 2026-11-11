@@ -347,7 +347,7 @@ module Verilog_Controller(
     
     // Compute Signals
     assign COMPUTE_EN  = (TOPS_EN) ? COMPUTE_EN_TOPS : ((Ext_IMC_EN) ? COMPUTE_EN0 : (IMC_Mode == 1) ? COMPUTE_EN_IMC :  COMPUTE_EN_C);
-    assign MUX_OUT_PAD   = (TOPS_EN) ? 1'b0 : ((Ext_IMC_EN) ? MUX_SEL0 : (IMC_Mode == 1) ? MUX_SEL_IMC : MUX_OUT_PAD_C);
+    assign MUX_OUT_PAD   = (TOPS_EN) ? 1'b1 : ((Ext_IMC_EN) ? MUX_SEL0 : (IMC_Mode == 1) ? MUX_SEL_IMC : MUX_OUT_PAD_C);
     assign CLK_OUT_PAD   = (Ext_IMC_EN) ? CLK_CAPTURE0 : (IMC_Mode == 1) ? CLK_CAPTURE_IMC :CLK_OUT_PAD_C;
     
     assign DFF_RST =  (TOPS_EN) ? DFF_RST_TOPS : ((~IMC_Mode && FAST_IMC_EN) ? DFF_RST_IMC : DFF_RST_C);

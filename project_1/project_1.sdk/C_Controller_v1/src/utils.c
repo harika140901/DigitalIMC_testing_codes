@@ -101,7 +101,7 @@ u8 initialise_AXI(){
 u8 initialise_FPGA(){
 	//Assign Default values to the Digital Signals
 	//This  shall be done from python as set default function before calling anything else.
-	u8 default_values[DIG_IN_SIG_LEN] = {0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1}; //Edit here to change default values
+	u8 default_values[DIG_IN_SIG_LEN] = {0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,0,0}; //Edit here to change default values
 	u16 scan_len[6] = {1152, 1152, 475, 1536, 200, 200};
 	memcpy(GLOBAL_SM_DATA.default_signal_values, default_values, sizeof(default_values));
 	memcpy(GLOBAL_SM_DATA.signal_values, default_values, sizeof(default_values)); //This is just initialise. It will be modified everytime set_ChipIO() is called
@@ -109,7 +109,7 @@ u8 initialise_FPGA(){
 	memset(GLOBAL_SM_DATA.dma_scanout_buffer,0,sizeof(GLOBAL_SM_DATA.dma_scanout_buffer));
 	memset(GLOBAL_SM_DATA.dma_imcout_buffer,0,sizeof(GLOBAL_SM_DATA.dma_imcout_buffer));
 	memset(GLOBAL_SM_DATA.sram_write_buffer,0,sizeof(GLOBAL_SM_DATA.sram_write_buffer));
-	u8 mode_default_values[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	u8 mode_default_values[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	memcpy(GLOBAL_SM_DATA.mode_default_signal_values, mode_default_values, sizeof(mode_default_values));
 	memcpy(GLOBAL_SM_DATA.mode_signal_values, mode_default_values, sizeof(mode_default_values));
 
@@ -239,10 +239,10 @@ u8 set_ScanID(u8 scan_id){
 	case WL_SC:
 		value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
 		break;
-	case READ_SC:
+	case SA_OUT_SC:
 		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case WRITE_SC:
+	case WRITE_DATA_SC:
 		value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
 		break;
 	default:
@@ -270,10 +270,10 @@ u8 set_ScanID_Verilog(u8 scan_id){
 	case WL_SC:
 		value_array[2] = 1;value_array[1] = 0;value_array[0] = 0;
 		break;
-	case READ_SC:
+	case SA_OUT_SC:
 		value_array[2] = 0;value_array[1] = 1;value_array[0] = 0;
 		break;
-	case WRITE_SC:
+	case WRITE_DATA_SC:
 		value_array[2] = 1;value_array[1] = 1;value_array[0] = 0;
 		break;
 	default:
@@ -587,9 +587,9 @@ u8 CL_EN_partial_scn(u8* scan_data, u8 scan_id, u16 scan_len){
 	//Call Scan IN Verilog Enable Here. And wait for it to complete.
 	//set verilog scan = 1 and NCLK = 255
 	{
-		u8 signals[10] = {VERILOG_C_SCAN,NCLK_0_V,NCLK_1_V,NCLK_2_V,NCLK_3_V,NCLK_4_V,NCLK_5_V,NCLK_6_V,NCLK_7_V,Test_DMA_V};
-		u8 values[10] = {1,1,0,0,0,0,0,0,0,0};
-		set_MODE_AXI_Bits(signals,10,values);
+		u8 signals[2] = {VERILOG_C_SCAN,Test_DMA_V};
+		u8 values[2] = {1,0};
+		set_MODE_AXI_Bits(signals,2,values);
 	}
 	//Enable SCAN_IN
 //	printf("Started Verilog Scan_In\n");
@@ -599,7 +599,7 @@ u8 CL_EN_partial_scn(u8* scan_data, u8 scan_id, u16 scan_len){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Wait for SCAN_IN_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)4)) {
+	while(!(get_AXI_Bits(0) & (u8)8)) {
 		// do nothing
 	}
 	//Disable SCAN_IN
@@ -636,7 +636,7 @@ u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 	}
 //	printf("Started Verilog Scan_Out\n");
 	//Wait for SCAN_OUT_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)16)) {
+	while(!(get_AXI_Bits(0) & (u8)32)) {
 		// do nothing
 	}
 	//Disable SCAN_OUT
@@ -690,7 +690,7 @@ u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 //Flush WL Scan Chain.And insert one 1.This needs to be done before Write.
 u8 flush_wl_sc(){
 	u8 flush_array[192] = {0};
-	flush_array[191] = 1; // insert at the beginning of the scan chain
+	flush_array[191] = 128; // insert at the beginning of the scan chain, wl 1536, all 0
 	//flush_array[144] = 8;
 	verilog_scan_in(flush_array,WL_SC,GLOBAL_SM_DATA.scan_len[WL_SC]);
 	/* Alternative (Slower) C-Scan-In
@@ -743,7 +743,7 @@ u8 write_SRAM_WL(u16 wl, u8* write_data){
 	verilog_scan_in(write_data,WRITE_DATA_SC,GLOBAL_SM_DATA.scan_len[WRITE_DATA_SC]);
 	//Do Write EN
 	{
-		u8 signals[1] = {WRITE_EN};
+		u8 signals[1] = {WEN};
 		u8 values[1] = {1};
 		set_AXI_Bits(signals,1,values);
 	}
@@ -761,7 +761,7 @@ u8 write_SRAM_WL(u16 wl, u8* write_data){
 	}
 	//turn off WRITE_EN
 	{
-		u8 signals[1] = {WRITE_EN};
+		u8 signals[1] = {WEN};
 		u8 values[1] = {0};
 		set_AXI_Bits(signals,1,values);
 	}
@@ -916,7 +916,7 @@ u8 write_SRAM_Calib(u8* write_data){//12 calib WLs ()
 
 
 u8 set_CS(u8 coulmn_id){
-	u8 signal_array[2]= {CS_0,CS_1};
+	u8 signal_array[2]= {CS_B0,CS_B1};
 	u8 value_array[2] = {0, 0};
 	switch(coulmn_id){
 	case 0:
@@ -1017,9 +1017,20 @@ u8 read_SRAM_Full(){
 u8 fast_IMC(){
 	//Turn on required signals
 	{
-		u8 signals[2] = {CTRL_EN,InputEN_DAC};
-		u8 values[2] = {1,1};
+		u8 signals[2] = {IMC_Mode_V,Ext_IMC_EN_V};
+		u8 values[2] = {0,0};
 		set_AXI_Bits(signals,2,values);
+	}
+	{
+		u8 signals[1] = {TOPS_EN_V};
+		u8 values[1] = {1};
+		set_AXI_Bits(signals,1,values);
+	}
+	sleep(2);  //captures inputscan0 data
+	{
+		u8 signals[1] = {TOPS_STOP_V};
+		u8 values[1] = {1};
+		set_AXI_Bits(signals,1,values);
 	}
 	//Enable FAST_IMC
 	{
@@ -1028,7 +1039,7 @@ u8 fast_IMC(){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Wait for FAST_IMC_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)32)){
+	while(!(get_AXI_Bits(0) & (u8)64)){
 		// Do Nothing
 	}
 	//sleep(1); //Dummy sleep
@@ -1039,11 +1050,11 @@ u8 fast_IMC(){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	//Turn off required signals
-	{
-		u8 signals[2] = {CTRL_EN,InputEN_DAC};
-		u8 values[2] = {0,0};
-		set_AXI_Bits(signals,2,values);
-	}
+	// {
+	// 	u8 signals[2] = {CTRL_EN,InputEN_DAC};
+	// 	u8 values[2] = {0,0};
+	// 	set_AXI_Bits(signals,2,values);
+	// }
 	//DEBUG_PRINT("Verilog FAST_IMC Done\n");
 
 	//calling receive function
@@ -1056,8 +1067,8 @@ u8 fast_IMC(){
 	// Start S2MM: Receive data back from FPGA
 	// because DMA transfers happen in the multiple of 32 bits, 16 bits are padded to imcout_buffer
 	u8 status;
-	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 452);
-	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma, (UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 452, XAXIDMA_DEVICE_TO_DMA);
+	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 60);
+	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma, (UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 60, XAXIDMA_DEVICE_TO_DMA);
 	if (status != XST_SUCCESS) {
 		DEBUG_PRINT("S2MM transfer failed\n");
 		return -1;
@@ -1094,7 +1105,7 @@ u8 fast_IMC_EXT(){
 	// Preset the IMC Mode to External
 	{
 //		printf("Preset the IMC_Mode to External Settings, EX_IMC_EN is for standalone wrapper \n");
-		u8 signals[2] = {IMC_Mode, Ext_IMC_EN};
+		u8 signals[2] = {IMC_Mode_V, Ext_IMC_EN_V};
 		u8 values[2] = {1, 0};
 		set_MODE_AXI_Bits(signals,2,values);
 	}
@@ -1131,7 +1142,7 @@ u8 fast_IMC_EXT(){
 	// }
 	//DEBUG_PRINT("Verilog FAST_IMC Done\n");
 	{ // RESET IMC_Mode
-		u8 signals[1] = {IMC_Mode};
+		u8 signals[1] = {IMC_Mode_V};
 		u8 values[1] = {0};
 		set_MODE_AXI_Bits(signals,1,values);
 	}
@@ -1145,10 +1156,10 @@ u8 fast_IMC_EXT(){
 		set_MODE_AXI_Bits(signals,1,values);
 	}
 	// Start S2MM: Receive data back from FPGA
-	// because DMA transfers happen in the multiple of 32 bits, 16 bits are padded to imcout_buffer
+	// because DMA transfers happen in the multiple of 32 bits, 5 bits are padded to imcout_buffer
 	u8 status;
-	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 452);
-	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma, (UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 452, XAXIDMA_DEVICE_TO_DMA);
+	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 60);
+	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma, (UINTPTR)GLOBAL_SM_DATA.dma_imcout_buffer, 60, XAXIDMA_DEVICE_TO_DMA);
 	if (status != XST_SUCCESS) {
 		printf("S2MM transfer failed\n");
 		return -1;
@@ -2031,29 +2042,22 @@ uint8_t reverse_bits(uint8_t byte) {
     return byte;
 }
 
-// Convert 450 bytes of u8 input to 360 signed ints
+// Convert 60 bytes of u8 input to 25 signed ints
 void TDC_OUT_u8_to_dec(){
-    uint32_t bit_buffer = 0;
+    uint64_t bit_buffer = 0;
     int bit_count = 0;
     int out_index = 0;
 
-    for (int i = 0; i < 450; ++i) {
-        uint8_t rev = reverse_bits(GLOBAL_SM_DATA.dma_imcout_buffer[i]);
-
-        // Add 8 bits to buffer
-        bit_buffer = (bit_buffer << 8) | rev;
+    for (int i = 0; i < 60 && out_index < 25; ++i) {
+        // append next byte above the bits already waiting
+        bit_buffer |= (uint64_t)GLOBAL_SM_DATA.dma_imcout_buffer[i] << bit_count;
         bit_count += 8;
 
-        // Extract 10-bit values
-        while (bit_count >= 10 && out_index < 360) {
-            int shift = bit_count - 10;
-            uint16_t bits10 = (bit_buffer >> shift) & 0x3FF;
-            bit_count -= 10;
-
-            int sign = (bits10 >> 9) & 1;
-            int magnitude = bits10 & 0x1FF;
-
-            GLOBAL_SM_DATA.imc_out_mac[out_index++] = sign ? -magnitude : magnitude;
+        // whenever 19 bits are available, take them
+        if (bit_count >= 19) {
+            GLOBAL_SM_DATA.imc_out_mac[out_index++] = (uint32_t)(bit_buffer & 0x7FFFF);
+            bit_buffer >>= 19;
+            bit_count  -= 19;
         }
     }
 }
