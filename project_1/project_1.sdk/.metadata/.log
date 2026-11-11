@@ -3365,3 +3365,213 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:/Harika/Digita
 
 !ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:51:33.518
 !MESSAGE XSCT command with result: [::hsi::utils::closesw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.828
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.828
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.828
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.828
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "6.8",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.841
+!MESSAGE XSCT Command: [::hsi::utils::get_drivers_for_sw -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.843
+!MESSAGE XSCT command with result: [::hsi::utils::get_drivers_for_sw -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, {"DIG_AXI_OUT_BUS": {"name": "gpio",
+"ver": "4.3",
+},
+"DIG_DEBUG_AXI_OUT_BUS_0": {"name": "gpio",
+"ver": "4.3",
+},
+"DIG_DEBUG_AXI_OUT_BUS_1": {"name": "gpio",
+"ver": "4.3",
+},
+"SCAN_MODE_SETTINGS_AXI_BUS": {"name": "gpio",
+"ver": "4.3",
+},
+"axi_dma_0": {"name": "axidma",
+"ver": "9.8",
+},
+"axi_gpio_0": {"name": "gpio",
+"ver": "4.3",
+},
+"axi_gpio_1": {"name": "gpio",
+"ver": "4.3",
+},
+"ps7_afi_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_2": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_afi_3": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_coresight_comp_0": {"name": "coresightps_dcc",
+"ver": "1.4",
+},
+"ps7_ddr_0": {"name": "ddrps",
+"ver": "1.0",
+},
+"ps7_ddrc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_dev_cfg_0": {"name": "devcfg",
+"ver": "3.5",
+},
+"ps7_dma_ns": {"name": "dmaps",
+"ver": "2.4",
+},
+"ps7_dma_s": {"name": "dmaps",
+"ver": "2.4",
+},
+"ps7_ethernet_0": {"name": "emacps",
+"ver": "3.8",
+},
+"ps7_globaltimer_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_gpio_0": {"name": "gpiops",
+"ver": "3.4",
+},
+"ps7_gpv_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_intc_dist_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_iop_bus_config_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_l2cachec_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ocmc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pl310_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_pmu_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_qspi_0": {"name": "qspips",
+"ver": "3.5",
+},
+"ps7_qspi_linear_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ram_1": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scuc_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_scugic_0": {"name": "scugic",
+"ver": "3.10",
+},
+"ps7_scutimer_0": {"name": "scutimer",
+"ver": "2.1",
+},
+"ps7_scuwdt_0": {"name": "scuwdt",
+"ver": "2.1",
+},
+"ps7_sd_0": {"name": "sdps",
+"ver": "3.6",
+},
+"ps7_slcr_0": {"name": "generic",
+"ver": "2.0",
+},
+"ps7_ttc_0": {"name": "ttcps",
+"ver": "3.7",
+},
+"ps7_uart_1": {"name": "uartps",
+"ver": "3.7",
+},
+"ps7_usb_0": {"name": "usbps",
+"ver": "2.4",
+},
+"ps7_xadc_0": {"name": "xadcps",
+"ver": "2.3",
+},
+"ps7_cortexa9_0": {"name": "cpu_cortexa9",
+"ver": "2.7",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "6.8",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT Command: [::hsi::utils::get_libs_from_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT command with result: [::hsi::utils::get_libs_from_sw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, lwip202]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT Command: [::hsi::utils::get_sw_libs -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.922
+!MESSAGE XSCT command with result: [::hsi::utils::get_sw_libs -json D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper_hw_platform_0/system.hdf D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, {"lwip202": "1.2",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.938
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "lwip202" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.938
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "lwip202" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\ThirdParty\sw_services\lwip202_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.938
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "lwip202" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.942
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "lwip202" && VERSION == "1.2"  && TYPE == "LIBRARY"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\ThirdParty\sw_services\lwip202_v1_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.986
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-11-11 19:56:01.986
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/C_Controller_v1_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY org.eclipse.core.resources 4 568 2026-11-11 19:56:50.809
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1852)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1224)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1165)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

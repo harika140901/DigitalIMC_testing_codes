@@ -225,7 +225,7 @@ u8 set_ModeIO_to_Default(){
 
 u8 set_ScanID(u8 scan_id){
 	u8 signal_array[3]= {SCN_SEL_0, SCN_SEL_1, SCN_SEL_2};
-	u8 value_array[3] = {0, 0 ,0, 0};
+	u8 value_array[3] = {0, 0 ,0};
 	switch(scan_id){
 	case INPUT_SC_1:
 		value_array[2] = 0;value_array[1] = 0;value_array[0] = 1;
@@ -547,73 +547,73 @@ u8 verilog_scan_in(u8* scan_data, u8 scan_id, u16 scan_len){
 	set_ModeIO_to_Default();
 	return status;
 }
-
-u8 CL_EN_partial_scn(u8* scan_data, u8 scan_id, u16 scan_len){
-	u8 status;
-	//Send Scan_ID to verilog Controller. It should know how much to scan in.
-	set_ScanID_Verilog(scan_id);
-	//Total bytes required
-	u32 num_bytes = floor((scan_len + 31) / 32)*4; //AXI DMA needs 4 byte packet each. So maintain 4 byte padding everywhere
-	//EN Recv_Data of verilog controller
-	{
-		u8 signals[1] = {SCAN_IN_RECV_V};
-		u8 values[1] = {1};
-		set_MODE_AXI_Bits(signals,1,values);
-	}
-	//Send the data-> copy it from your FN array into aligned buffer. This is not required in C code.
-	memcpy(GLOBAL_SM_DATA.dma_scan_in_buffer,scan_data,num_bytes);
-	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_scan_in_buffer, num_bytes);
-	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma,(UINTPTR)GLOBAL_SM_DATA.dma_scan_in_buffer, num_bytes, XAXIDMA_DMA_TO_DEVICE);
-	if (status != XST_SUCCESS) {
-		printf("MM2S transfer failed with %d\n",status);
-		return -1;
-	}
-	// Wait for MM2S completion
-	while (XAxiDma_Busy(&GLOBAL_SM_DATA.AxiDma, XAXIDMA_DMA_TO_DEVICE)) {
-		// Do nothing
-	}
-	//EN low Recv_Data of verilog controller
-	{
-		u8 signals[1] = {SCAN_IN_RECV_V};
-		u8 values[1] = {0};
-		set_MODE_AXI_Bits(signals,1,values);
-	} { // set stepIMC_EN as high, and pass the length for partial scan in
-		u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
-		u8 values[7] = {1, scan_len & 0x01, (scan_len>>1) & 0x01, (scan_len>>2) & 0x01, (scan_len>>3) & 0x01, (scan_len>>4) & 0x01, (scan_len>>5) & 0x01};
-		set_MODE_AXI_Bits(signals,7,values);
-	}
-	//printf("Transfered SCAN_IN Data to Verilog Controller\n");
-
-	//Call Scan IN Verilog Enable Here. And wait for it to complete.
-	//set verilog scan = 1 and NCLK = 255
-	{
-		u8 signals[2] = {VERILOG_C_SCAN,Test_DMA_V};
-		u8 values[2] = {1,0};
-		set_MODE_AXI_Bits(signals,2,values);
-	}
-	//Enable SCAN_IN
-//	printf("Started Verilog Scan_In\n");
-	{
-		u8 signals[1] = {SCAN_IN_EN_V};
-		u8 values[1] = {1};
-		set_MODE_AXI_Bits(signals,1,values);
-	}
-	//Wait for SCAN_IN_DONE to go high
-	while(!(get_AXI_Bits(0) & (u8)8)) {
-		// do nothing
-	}
-	//Disable SCAN_IN
-	{
-		u8 signals[1] = {SCAN_IN_EN_V};
-		u8 values[1] = {0};
-		set_MODE_AXI_Bits(signals,1,values);
-	}
-	//printf("Verilog SCAN_IN Done\n");
-	set_ModeIO_to_Default(); // resets the mode signals to default
-	return status;
-}
-
-//This is fast scan out fn
+//
+//u8 CL_EN_partial_scn(u8* scan_data, u8 scan_id, u16 scan_len){
+//	u8 status;
+//	//Send Scan_ID to verilog Controller. It should know how much to scan in.
+//	set_ScanID_Verilog(scan_id);
+//	//Total bytes required
+//	u32 num_bytes = floor((scan_len + 31) / 32)*4; //AXI DMA needs 4 byte packet each. So maintain 4 byte padding everywhere
+//	//EN Recv_Data of verilog controller
+//	{
+//		u8 signals[1] = {SCAN_IN_RECV_V};
+//		u8 values[1] = {1};
+//		set_MODE_AXI_Bits(signals,1,values);
+//	}
+//	//Send the data-> copy it from your FN array into aligned buffer. This is not required in C code.
+//	memcpy(GLOBAL_SM_DATA.dma_scan_in_buffer,scan_data,num_bytes);
+//	Xil_DCacheFlushRange((UINTPTR)GLOBAL_SM_DATA.dma_scan_in_buffer, num_bytes);
+//	status = XAxiDma_SimpleTransfer(&GLOBAL_SM_DATA.AxiDma,(UINTPTR)GLOBAL_SM_DATA.dma_scan_in_buffer, num_bytes, XAXIDMA_DMA_TO_DEVICE);
+//	if (status != XST_SUCCESS) {
+//		printf("MM2S transfer failed with %d\n",status);
+//		return -1;
+//	}
+//	// Wait for MM2S completion
+//	while (XAxiDma_Busy(&GLOBAL_SM_DATA.AxiDma, XAXIDMA_DMA_TO_DEVICE)) {
+//		// Do nothing
+//	}
+//	//EN low Recv_Data of verilog controller
+//	{
+//		u8 signals[1] = {SCAN_IN_RECV_V};
+//		u8 values[1] = {0};
+//		set_MODE_AXI_Bits(signals,1,values);
+//	} { // set stepIMC_EN as high, and pass the length for partial scan in
+//		u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+//		u8 values[7] = {1, scan_len & 0x01, (scan_len>>1) & 0x01, (scan_len>>2) & 0x01, (scan_len>>3) & 0x01, (scan_len>>4) & 0x01, (scan_len>>5) & 0x01};
+//		set_MODE_AXI_Bits(signals,7,values);
+//	}
+//	//printf("Transfered SCAN_IN Data to Verilog Controller\n");
+//
+//	//Call Scan IN Verilog Enable Here. And wait for it to complete.
+//	//set verilog scan = 1 and NCLK = 255
+//	{
+//		u8 signals[2] = {VERILOG_C_SCAN,Test_DMA_V};
+//		u8 values[2] = {1,0};
+//		set_MODE_AXI_Bits(signals,2,values);
+//	}
+//	//Enable SCAN_IN
+////	printf("Started Verilog Scan_In\n");
+//	{
+//		u8 signals[1] = {SCAN_IN_EN_V};
+//		u8 values[1] = {1};
+//		set_MODE_AXI_Bits(signals,1,values);
+//	}
+//	//Wait for SCAN_IN_DONE to go high
+//	while(!(get_AXI_Bits(0) & (u8)8)) {
+//		// do nothing
+//	}
+//	//Disable SCAN_IN
+//	{
+//		u8 signals[1] = {SCAN_IN_EN_V};
+//		u8 values[1] = {0};
+//		set_MODE_AXI_Bits(signals,1,values);
+//	}
+//	//printf("Verilog SCAN_IN Done\n");
+//	set_ModeIO_to_Default(); // resets the mode signals to default
+//	return status;
+//}
+//
+////This is fast scan out fn
 u32 verilog_scan_out(u8 scan_id,u16 scan_len){
 	u8 status;
 	//Send Scan_ID to verilog Controller. It should know how much to scan in.
@@ -1191,248 +1191,248 @@ u8 fast_IMC_EXT(){
 	*/
 	return 0;
 }
-
-u8 step_IMC_INT(u8 active_cols) {
-	// Turn on required signals
-	{
-		// printf("Turn on the InputEN_DAC\n");
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {1};
-		set_AXI_Bits(signals,1,values);
-	}
-// There are total 90 IMC columns per bank, we only activate 'active cols' at a time
-	// the number of steps required to perform IMC is:
-	u16 total_steps = (90 + active_cols - 1) / active_cols;
-
-	u16 scan_bytes = (active_cols + 7) / 8;
-	u8 *scan_data_0 = malloc(scan_bytes);
-	u8 *scan_data_1  = malloc(scan_bytes);
-	memset(scan_data_0, 0x00, scan_bytes);
-	memset(scan_data_1,  0xFF, scan_bytes);
-
-	{// pulse DFF_RST
-		u8 signals[1] = {DFF_RST};
-		u8 values[1] = {1};
-		set_AXI_Bits(signals,1,values);
-	} {
-		u8 signals[1] = {DFF_RST};
-		u8 values[1] = {0};
-		set_AXI_Bits(signals,1,values);
-	}
-
-	{// enable the controller
-		u8 signals[1] = {CTRL_EN};
-		u8 values[1] = {1};
-		set_AXI_Bits(signals,1,values);
-	}
-
-
-	for (u16 step = 0; step < total_steps; step++) {
-		if(step == 0) {
-			// scan data scan id, scan len
-			CL_EN_partial_scn(scan_data_1, 2, active_cols); // CL_EN_LM
-			CL_EN_partial_scn(scan_data_1, 3, active_cols); // CL_EN_RM
-		} else {
-			CL_EN_partial_scn(scan_data_0, 2, active_cols); // CL_EN_LM
-			CL_EN_partial_scn(scan_data_0, 3, active_cols); // CL_EN_RM
-		}
-		for (u8 bank = 0; bank < 4; bank++) {
-			{
-				u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
-				u8 values[4] = {(bank == 0), (bank == 1), (bank == 2), (bank == 3)};
-				set_AXI_Bits(signals, 4, values);
-			} {
-				u8 signals[1] = {DFF_RST};
-				u8 values[1] = {1};
-				set_AXI_Bits(signals,1,values);
-			}
-			//Wait for IMC_DONE to go high
-			while(!(get_AXI_Bits(0) & (u8)2)){
-				// Do Nothing
-//				printf("DEBUG: waiting for IMC Done\n");
-			} {
-
-//				printf("DEBUG: while loop finished executing.\n");
-				u8 signals[1] = {DFF_RST};
-				u8 values[1] = {0};
-				set_AXI_Bits(signals,1,values);
-			}
-		} { // reset the bank en signals
-			u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
-			u8 values[4] = {0,0,0,0};
-			set_AXI_Bits(signals, 4, values);
-		}
-
-	}//Turn off required signals
-	{
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {0};
-		set_AXI_Bits(signals,1,values);
-	}
-	memset(GLOBAL_SM_DATA.dma_imcout_buffer, 0,
-	sizeof(GLOBAL_SM_DATA.dma_imcout_buffer));
-	// load & scan out the results
-	for (u8 bank = 0; bank < 4; bank++) {
-		{
-			u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
-			u8 values[8] = {bank%2, bank/2, 0,0,0,0,1,1}; set_AXI_Bits(signals, 8, values);
-		} // now turn off CLK_A
-		{
-			u8 signals[1] = {CLK_A};
-			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
-		} // now turn off IN_EN
-		{
-			u8 signals[1] = {IN_EN};
-			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
-		}
-		// now scan out
-		u8 scan_id = bank/2;
-		u16 scan_len = 900;
-		verilog_scan_out(scan_id,scan_len);
-		// Destination starts every 900 bits.
-		u16 dst = (bank * 900) >> 3;
-
-		if ((bank & 1) == 0) {
-			// Byte-aligned: 900 bits = 112 bytes + 4 bits
-			memcpy(&GLOBAL_SM_DATA.dma_imcout_buffer[dst],
-				   GLOBAL_SM_DATA.dma_scanout_buffer,
-				   112);
-
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
-				GLOBAL_SM_DATA.dma_scanout_buffer[112] & 0x0F;
-		}
-		else {
-			// Starts 4 bits into the destination byte
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst] =
-				(GLOBAL_SM_DATA.dma_scanout_buffer[0] & 0x0F) << 4;
-
-			for (u16 i = 0; i < 111; i++) {
-				GLOBAL_SM_DATA.dma_imcout_buffer[dst + i + 1] =
-					(GLOBAL_SM_DATA.dma_scanout_buffer[i] >> 4) |
-					(GLOBAL_SM_DATA.dma_scanout_buffer[i + 1] << 4);
-			}
-
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
-				GLOBAL_SM_DATA.dma_scanout_buffer[111] >> 4;
-		}
-
-	}
-	//printf("Step IMC Done\n");
-	return 0;
-}
-
-
-u8 step_IMC_EXT(u8 active_cols) {
-	// Turn on required signals
-	{
-		// printf("Turn on the InputEN_DAC\n");
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {1};
-		set_AXI_Bits(signals,1,values);
-	}
-// There are total 90 IMC columns per bank, we only activate 'active cols' at a time
-	// the number of steps required to perform IMC is:
-	u16 total_steps = (90 + active_cols - 1) / active_cols;
-
-	u16 scan_bytes = (active_cols + 7) / 8;
-	u8 *scan_data_0 = malloc(scan_bytes);
-	u8 *scan_data_1  = malloc(scan_bytes);
-	memset(scan_data_0, 0x00, scan_bytes);
-	memset(scan_data_1,  0xFF, scan_bytes);
-
-	for (u16 step = 0; step < total_steps; step++) {
-		if(step == 0) {
-			// scan data scan id, scan len
-			CL_EN_partial_scn(scan_data_1, 2, active_cols); // CL_EN_LM
-			CL_EN_partial_scn(scan_data_1, 3, active_cols); // CL_EN_RM
-		} else {
-			CL_EN_partial_scn(scan_data_0, 2, active_cols); // CL_EN_LM
-			CL_EN_partial_scn(scan_data_0, 3, active_cols); // CL_EN_RM
-		}
-		for (u8 bank = 0; bank < 4; bank++) {
-			{
-				u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
-				u8 values[4] = {(bank == 0), (bank == 1), (bank == 2), (bank == 3)};
-				set_AXI_Bits(signals, 4, values);
-			} {
-				u8 signals[1] = {Ext_IMC_EN};
-				u8 values[1] = {1};
-				set_MODE_AXI_Bits(signals,1,values);
-			}
-			//Wait for IMC_DONE to go high
-			while(!(get_AXI_Bits(0) & (u8)32)){
-				// Do Nothing
-			} {
-				u8 signals[1] = {Ext_IMC_EN};
-				u8 values[1] = {0};
-				set_MODE_AXI_Bits(signals,1,values);
-			}
-		} { // reset the bank en signals
-			u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
-			u8 values[4] = {0,0,0,0};
-			set_AXI_Bits(signals, 4, values);
-		}
-
-	}//Turn off required signals
-	{
-		u8 signals[1] = {InputEN_DAC};
-		u8 values[1] = {0};
-		set_AXI_Bits(signals,1,values);
-	}
-	memset(GLOBAL_SM_DATA.dma_imcout_buffer, 0,
-	sizeof(GLOBAL_SM_DATA.dma_imcout_buffer));
-	// load & scan out the results
-	for (u8 bank = 0; bank < 4; bank++) {
-		{
-			u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
-			u8 values[8] = {bank%2, bank/2, 0,0,0,0,1,1}; set_AXI_Bits(signals, 8, values);
-		} // now turn off CLK_A
-		{
-			u8 signals[1] = {CLK_A};
-			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
-		} // now turn off IN_EN
-		{
-			u8 signals[1] = {IN_EN};
-			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
-		}
-		// now scan out
-		u8 scan_id = bank/2;
-		u16 scan_len = 900;
-		verilog_scan_out(scan_id,scan_len);
-		// Destination starts every 900 bits.
-		u16 dst = (bank * 900) >> 3;
-
-		if ((bank & 1) == 0) {
-			// Byte-aligned: 900 bits = 112 bytes + 4 bits
-			memcpy(&GLOBAL_SM_DATA.dma_imcout_buffer[dst],
-				   GLOBAL_SM_DATA.dma_scanout_buffer,
-				   112);
-
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
-				GLOBAL_SM_DATA.dma_scanout_buffer[112] & 0x0F;
-		}
-		else {
-			// Starts 4 bits into the destination byte
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst] =
-				(GLOBAL_SM_DATA.dma_scanout_buffer[0] & 0x0F) << 4;
-
-			for (u16 i = 0; i < 111; i++) {
-				GLOBAL_SM_DATA.dma_imcout_buffer[dst + i + 1] =
-					(GLOBAL_SM_DATA.dma_scanout_buffer[i] >> 4) |
-					(GLOBAL_SM_DATA.dma_scanout_buffer[i + 1] << 4);
-			}
-
-			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
-				GLOBAL_SM_DATA.dma_scanout_buffer[111] >> 4;
-		}
-
-	}
-	//printf("Step IMC Done\n");
-	return 0;
-}
-
-//Compare the data for marching pattern
-//remember the data is in bytes not bits so all 0 -> 0 all 1 -> 255
+//
+//u8 step_IMC_INT(u8 active_cols) {
+//	// Turn on required signals
+//	{
+//		// printf("Turn on the InputEN_DAC\n");
+//		u8 signals[1] = {InputEN_DAC};
+//		u8 values[1] = {1};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//// There are total 90 IMC columns per bank, we only activate 'active cols' at a time
+//	// the number of steps required to perform IMC is:
+//	u16 total_steps = (90 + active_cols - 1) / active_cols;
+//
+//	u16 scan_bytes = (active_cols + 7) / 8;
+//	u8 *scan_data_0 = malloc(scan_bytes);
+//	u8 *scan_data_1  = malloc(scan_bytes);
+//	memset(scan_data_0, 0x00, scan_bytes);
+//	memset(scan_data_1,  0xFF, scan_bytes);
+//
+//	{// pulse DFF_RST
+//		u8 signals[1] = {DFF_RST};
+//		u8 values[1] = {1};
+//		set_AXI_Bits(signals,1,values);
+//	} {
+//		u8 signals[1] = {DFF_RST};
+//		u8 values[1] = {0};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//
+//	{// enable the controller
+//		u8 signals[1] = {CTRL_EN};
+//		u8 values[1] = {1};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//
+//
+//	for (u16 step = 0; step < total_steps; step++) {
+//		if(step == 0) {
+//			// scan data scan id, scan len
+//			CL_EN_partial_scn(scan_data_1, 2, active_cols); // CL_EN_LM
+//			CL_EN_partial_scn(scan_data_1, 3, active_cols); // CL_EN_RM
+//		} else {
+//			CL_EN_partial_scn(scan_data_0, 2, active_cols); // CL_EN_LM
+//			CL_EN_partial_scn(scan_data_0, 3, active_cols); // CL_EN_RM
+//		}
+//		for (u8 bank = 0; bank < 4; bank++) {
+//			{
+//				u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+//				u8 values[4] = {(bank == 0), (bank == 1), (bank == 2), (bank == 3)};
+//				set_AXI_Bits(signals, 4, values);
+//			} {
+//				u8 signals[1] = {DFF_RST};
+//				u8 values[1] = {1};
+//				set_AXI_Bits(signals,1,values);
+//			}
+//			//Wait for IMC_DONE to go high
+//			while(!(get_AXI_Bits(0) & (u8)2)){
+//				// Do Nothing
+////				printf("DEBUG: waiting for IMC Done\n");
+//			} {
+//
+////				printf("DEBUG: while loop finished executing.\n");
+//				u8 signals[1] = {DFF_RST};
+//				u8 values[1] = {0};
+//				set_AXI_Bits(signals,1,values);
+//			}
+//		} { // reset the bank en signals
+//			u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+//			u8 values[4] = {0,0,0,0};
+//			set_AXI_Bits(signals, 4, values);
+//		}
+//
+//	}//Turn off required signals
+//	{
+//		u8 signals[1] = {InputEN_DAC};
+//		u8 values[1] = {0};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//	memset(GLOBAL_SM_DATA.dma_imcout_buffer, 0,
+//	sizeof(GLOBAL_SM_DATA.dma_imcout_buffer));
+//	// load & scan out the results
+//	for (u8 bank = 0; bank < 4; bank++) {
+//		{
+//			u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+//			u8 values[8] = {bank%2, bank/2, 0,0,0,0,1,1}; set_AXI_Bits(signals, 8, values);
+//		} // now turn off CLK_A
+//		{
+//			u8 signals[1] = {CLK_A};
+//			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
+//		} // now turn off IN_EN
+//		{
+//			u8 signals[1] = {IN_EN};
+//			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
+//		}
+//		// now scan out
+//		u8 scan_id = bank/2;
+//		u16 scan_len = 900;
+//		verilog_scan_out(scan_id,scan_len);
+//		// Destination starts every 900 bits.
+//		u16 dst = (bank * 900) >> 3;
+//
+//		if ((bank & 1) == 0) {
+//			// Byte-aligned: 900 bits = 112 bytes + 4 bits
+//			memcpy(&GLOBAL_SM_DATA.dma_imcout_buffer[dst],
+//				   GLOBAL_SM_DATA.dma_scanout_buffer,
+//				   112);
+//
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
+//				GLOBAL_SM_DATA.dma_scanout_buffer[112] & 0x0F;
+//		}
+//		else {
+//			// Starts 4 bits into the destination byte
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst] =
+//				(GLOBAL_SM_DATA.dma_scanout_buffer[0] & 0x0F) << 4;
+//
+//			for (u16 i = 0; i < 111; i++) {
+//				GLOBAL_SM_DATA.dma_imcout_buffer[dst + i + 1] =
+//					(GLOBAL_SM_DATA.dma_scanout_buffer[i] >> 4) |
+//					(GLOBAL_SM_DATA.dma_scanout_buffer[i + 1] << 4);
+//			}
+//
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
+//				GLOBAL_SM_DATA.dma_scanout_buffer[111] >> 4;
+//		}
+//
+//	}
+//	//printf("Step IMC Done\n");
+//	return 0;
+//}
+//
+//
+//u8 step_IMC_EXT(u8 active_cols) {
+//	// Turn on required signals
+//	{
+//		// printf("Turn on the InputEN_DAC\n");
+//		u8 signals[1] = {InputEN_DAC};
+//		u8 values[1] = {1};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//// There are total 90 IMC columns per bank, we only activate 'active cols' at a time
+//	// the number of steps required to perform IMC is:
+//	u16 total_steps = (90 + active_cols - 1) / active_cols;
+//
+//	u16 scan_bytes = (active_cols + 7) / 8;
+//	u8 *scan_data_0 = malloc(scan_bytes);
+//	u8 *scan_data_1  = malloc(scan_bytes);
+//	memset(scan_data_0, 0x00, scan_bytes);
+//	memset(scan_data_1,  0xFF, scan_bytes);
+//
+//	for (u16 step = 0; step < total_steps; step++) {
+//		if(step == 0) {
+//			// scan data scan id, scan len
+//			CL_EN_partial_scn(scan_data_1, 2, active_cols); // CL_EN_LM
+//			CL_EN_partial_scn(scan_data_1, 3, active_cols); // CL_EN_RM
+//		} else {
+//			CL_EN_partial_scn(scan_data_0, 2, active_cols); // CL_EN_LM
+//			CL_EN_partial_scn(scan_data_0, 3, active_cols); // CL_EN_RM
+//		}
+//		for (u8 bank = 0; bank < 4; bank++) {
+//			{
+//				u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+//				u8 values[4] = {(bank == 0), (bank == 1), (bank == 2), (bank == 3)};
+//				set_AXI_Bits(signals, 4, values);
+//			} {
+//				u8 signals[1] = {Ext_IMC_EN};
+//				u8 values[1] = {1};
+//				set_MODE_AXI_Bits(signals,1,values);
+//			}
+//			//Wait for IMC_DONE to go high
+//			while(!(get_AXI_Bits(0) & (u8)32)){
+//				// Do Nothing
+//			} {
+//				u8 signals[1] = {Ext_IMC_EN};
+//				u8 values[1] = {0};
+//				set_MODE_AXI_Bits(signals,1,values);
+//			}
+//		} { // reset the bank en signals
+//			u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+//			u8 values[4] = {0,0,0,0};
+//			set_AXI_Bits(signals, 4, values);
+//		}
+//
+//	}//Turn off required signals
+//	{
+//		u8 signals[1] = {InputEN_DAC};
+//		u8 values[1] = {0};
+//		set_AXI_Bits(signals,1,values);
+//	}
+//	memset(GLOBAL_SM_DATA.dma_imcout_buffer, 0,
+//	sizeof(GLOBAL_SM_DATA.dma_imcout_buffer));
+//	// load & scan out the results
+//	for (u8 bank = 0; bank < 4; bank++) {
+//		{
+//			u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+//			u8 values[8] = {bank%2, bank/2, 0,0,0,0,1,1}; set_AXI_Bits(signals, 8, values);
+//		} // now turn off CLK_A
+//		{
+//			u8 signals[1] = {CLK_A};
+//			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
+//		} // now turn off IN_EN
+//		{
+//			u8 signals[1] = {IN_EN};
+//			u8 values[1] = {0}; set_AXI_Bits(signals, 1, values);
+//		}
+//		// now scan out
+//		u8 scan_id = bank/2;
+//		u16 scan_len = 900;
+//		verilog_scan_out(scan_id,scan_len);
+//		// Destination starts every 900 bits.
+//		u16 dst = (bank * 900) >> 3;
+//
+//		if ((bank & 1) == 0) {
+//			// Byte-aligned: 900 bits = 112 bytes + 4 bits
+//			memcpy(&GLOBAL_SM_DATA.dma_imcout_buffer[dst],
+//				   GLOBAL_SM_DATA.dma_scanout_buffer,
+//				   112);
+//
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
+//				GLOBAL_SM_DATA.dma_scanout_buffer[112] & 0x0F;
+//		}
+//		else {
+//			// Starts 4 bits into the destination byte
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst] =
+//				(GLOBAL_SM_DATA.dma_scanout_buffer[0] & 0x0F) << 4;
+//
+//			for (u16 i = 0; i < 111; i++) {
+//				GLOBAL_SM_DATA.dma_imcout_buffer[dst + i + 1] =
+//					(GLOBAL_SM_DATA.dma_scanout_buffer[i] >> 4) |
+//					(GLOBAL_SM_DATA.dma_scanout_buffer[i + 1] << 4);
+//			}
+//
+//			GLOBAL_SM_DATA.dma_imcout_buffer[dst + 112] =
+//				GLOBAL_SM_DATA.dma_scanout_buffer[111] >> 4;
+//		}
+//
+//	}
+//	//printf("Step IMC Done\n");
+//	return 0;
+//}
+//
+////Compare the data for marching pattern
+////remember the data is in bytes not bits so all 0 -> 0 all 1 -> 255
 u8 compare_data(u8* data, u16 len, u8 key){
 	u8 matches = 1;
 	for(u16 i = 0; i < len; i++){

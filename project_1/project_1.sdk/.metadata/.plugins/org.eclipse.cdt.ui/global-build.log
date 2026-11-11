@@ -300,3 +300,531 @@ In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_b
                                                                 ^~~~~~~~~
                                                                 SCN_SEL_0
 make: *** [src/subdir.mk:59: src/utils.o] Error 1
+19:56:09 **** Auto Build of configuration Debug for project C_Controller_v1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/echo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/echo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+'Finished building: ../src/echo.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/main.c:43:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+../src/main.c: In function 'main':
+../src/main.c:162:2: warning: implicit declaration of function 'print_ip_settings' [-Wimplicit-function-declaration]
+  print_ip_settings(&ipaddr, &netmask, &gw);
+  ^~~~~~~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/state_machine.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/state_machine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/state_machine.d" -MT"src/state_machine.o" -o "src/state_machine.o" "../src/state_machine.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/state_machine.c:7:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+In file included from ../src/state_machine.c:9:0:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/state_machine.c'
+' '
+'Building file: ../src/utils.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/utils.c:3:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+../src/utils.c: In function 'set_ScanID':
+../src/utils.c:228:32: warning: excess elements in array initializer
+  u8 value_array[3] = {0, 0 ,0, 0};
+                                ^
+../src/utils.c:228:32: note: (near initialization for 'value_array')
+../src/utils.c: In function 'CL_EN_partial_scn':
+../src/utils.c:581:20: error: 'stepIMC_EN' undeclared (first use in this function); did you mean 'step_IMC_INT'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                    ^~~~~~~~~~
+                    step_IMC_INT
+../src/utils.c:581:20: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:581:32: error: 'SCAN_LEN_V_0' undeclared (first use in this function); did you mean 'SCAN_SEL_1_V'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                ^~~~~~~~~~~~
+                                SCAN_SEL_1_V
+../src/utils.c:581:46: error: 'SCAN_LEN_V_1' undeclared (first use in this function); did you mean 'SCAN_LEN_V_0'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                              ^~~~~~~~~~~~
+                                              SCAN_LEN_V_0
+../src/utils.c:581:60: error: 'SCAN_LEN_V_2' undeclared (first use in this function); did you mean 'SCAN_LEN_V_1'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                            ^~~~~~~~~~~~
+                                                            SCAN_LEN_V_1
+../src/utils.c:581:74: error: 'SCAN_LEN_V_3' undeclared (first use in this function); did you mean 'SCAN_LEN_V_2'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                          ^~~~~~~~~~~~
+                                                                          SCAN_LEN_V_2
+../src/utils.c:581:88: error: 'SCAN_LEN_V_4' undeclared (first use in this function); did you mean 'SCAN_LEN_V_3'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                                        ^~~~~~~~~~~~
+                                                                                        SCAN_LEN_V_3
+../src/utils.c:581:102: error: 'SCAN_LEN_V_5' undeclared (first use in this function); did you mean 'SCAN_LEN_V_4'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                                                      ^~~~~~~~~~~~
+                                                                                                      SCAN_LEN_V_4
+../src/utils.c: In function 'step_IMC_INT':
+../src/utils.c:1199:20: error: 'InputEN_DAC' undeclared (first use in this function)
+   u8 signals[1] = {InputEN_DAC};
+                    ^~~~~~~~~~~
+../src/utils.c:1224:20: error: 'CTRL_EN' undeclared (first use in this function); did you mean 'WL_EN'?
+   u8 signals[1] = {CTRL_EN};
+                    ^~~~~~~
+                    WL_EN
+../src/utils.c:1241:22: error: 'BANK_EN_0' undeclared (first use in this function)
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                      ^~~~~~~~~
+../src/utils.c:1241:33: error: 'BANK_EN_1' undeclared (first use in this function); did you mean 'BANK_EN_0'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                 ^~~~~~~~~
+                                 BANK_EN_0
+../src/utils.c:1241:44: error: 'BANK_EN_2' undeclared (first use in this function); did you mean 'BANK_EN_1'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                            ^~~~~~~~~
+                                            BANK_EN_1
+../src/utils.c:1241:55: error: 'BANK_EN_3' undeclared (first use in this function); did you mean 'BANK_EN_2'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                                       ^~~~~~~~~
+                                                       BANK_EN_2
+../src/utils.c:1277:21: error: 'BANK_SEL' undeclared (first use in this function); did you mean 'BANK_EN_3'?
+    u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+                     ^~~~~~~~
+                     BANK_EN_3
+../src/utils.c:1277:64: error: 'SCN_SEL_3' undeclared (first use in this function); did you mean 'SCN_SEL_0'?
+    u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+                                                                ^~~~~~~~~
+                                                                SCN_SEL_0
+../src/utils.c: In function 'step_IMC_EXT':
+../src/utils.c:1329:20: error: 'InputEN_DAC' undeclared (first use in this function)
+   u8 signals[1] = {InputEN_DAC};
+                    ^~~~~~~~~~~
+../src/utils.c:1354:22: error: 'BANK_EN_0' undeclared (first use in this function)
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                      ^~~~~~~~~
+../src/utils.c:1354:33: error: 'BANK_EN_1' undeclared (first use in this function); did you mean 'BANK_EN_0'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                 ^~~~~~~~~
+                                 BANK_EN_0
+../src/utils.c:1354:44: error: 'BANK_EN_2' undeclared (first use in this function); did you mean 'BANK_EN_1'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                            ^~~~~~~~~
+                                            BANK_EN_1
+../src/utils.c:1354:55: error: 'BANK_EN_3' undeclared (first use in this function); did you mean 'BANK_EN_2'?
+     u8 signals[4] = {BANK_EN_0, BANK_EN_1, BANK_EN_2, BANK_EN_3};
+                                                       ^~~~~~~~~
+                                                       BANK_EN_2
+../src/utils.c:1358:22: error: 'Ext_IMC_EN' undeclared (first use in this function); did you mean 'Ext_IMC_EN_V'?
+     u8 signals[1] = {Ext_IMC_EN};
+                      ^~~~~~~~~~
+                      Ext_IMC_EN_V
+../src/utils.c:1387:21: error: 'BANK_SEL' undeclared (first use in this function); did you mean 'BANK_EN_3'?
+    u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+                     ^~~~~~~~
+                     BANK_EN_3
+../src/utils.c:1387:64: error: 'SCN_SEL_3' undeclared (first use in this function); did you mean 'SCN_SEL_0'?
+    u8 signals[8] = {BANK_SEL, SCN_SEL_0, SCN_SEL_1, SCN_SEL_2, SCN_SEL_3, SCN_IN, IN_EN, CLK_A};
+                                                                ^~~~~~~~~
+                                                                SCN_SEL_0
+make: *** [src/subdir.mk:59: src/utils.o] Error 1
+19:56:36 **** Auto Build of configuration Debug for project C_Controller_v1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/utils.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/utils.c:3:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+../src/utils.c: In function 'set_ScanID':
+../src/utils.c:228:32: warning: excess elements in array initializer
+  u8 value_array[3] = {0, 0 ,0, 0};
+                                ^
+../src/utils.c:228:32: note: (near initialization for 'value_array')
+../src/utils.c: In function 'CL_EN_partial_scn':
+../src/utils.c:581:20: error: 'stepIMC_EN' undeclared (first use in this function); did you mean 'step_IMC_INT'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                    ^~~~~~~~~~
+                    step_IMC_INT
+../src/utils.c:581:20: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:581:32: error: 'SCAN_LEN_V_0' undeclared (first use in this function); did you mean 'SCAN_SEL_1_V'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                ^~~~~~~~~~~~
+                                SCAN_SEL_1_V
+../src/utils.c:581:46: error: 'SCAN_LEN_V_1' undeclared (first use in this function); did you mean 'SCAN_LEN_V_0'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                              ^~~~~~~~~~~~
+                                              SCAN_LEN_V_0
+../src/utils.c:581:60: error: 'SCAN_LEN_V_2' undeclared (first use in this function); did you mean 'SCAN_LEN_V_1'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                            ^~~~~~~~~~~~
+                                                            SCAN_LEN_V_1
+../src/utils.c:581:74: error: 'SCAN_LEN_V_3' undeclared (first use in this function); did you mean 'SCAN_LEN_V_2'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                          ^~~~~~~~~~~~
+                                                                          SCAN_LEN_V_2
+../src/utils.c:581:88: error: 'SCAN_LEN_V_4' undeclared (first use in this function); did you mean 'SCAN_LEN_V_3'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                                        ^~~~~~~~~~~~
+                                                                                        SCAN_LEN_V_3
+../src/utils.c:581:102: error: 'SCAN_LEN_V_5' undeclared (first use in this function); did you mean 'SCAN_LEN_V_4'?
+   u8 signals[7] = {stepIMC_EN, SCAN_LEN_V_0, SCAN_LEN_V_1, SCAN_LEN_V_2, SCAN_LEN_V_3, SCAN_LEN_V_4, SCAN_LEN_V_5};
+                                                                                                      ^~~~~~~~~~~~
+                                                                                                      SCAN_LEN_V_4
+make: *** [src/subdir.mk:59: src/utils.o] Error 1
+19:56:52 **** Auto Build of configuration Debug for project C_Controller_v1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/utils.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/utils.c:3:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+../src/utils.c: In function 'set_ScanID':
+../src/utils.c:228:32: warning: excess elements in array initializer
+  u8 value_array[3] = {0, 0 ,0, 0};
+                                ^
+../src/utils.c:228:32: note: (near initialization for 'value_array')
+'Finished building: ../src/utils.c'
+' '
+'Building target: C_Controller_v1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../C_Controller_v1_bsp/ps7_cortexa9_0/lib -o "C_Controller_v1.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o ./src/state_machine.o ./src/utils.o   
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _vector_table; defaulting to 0000000000100000
+./src/echo.o: In function `print_ip':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:72: undefined reference to `print'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:73: undefined reference to `xil_printf'
+./src/echo.o: In function `push_data':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:113: undefined reference to `tcp_write'
+./src/echo.o: In function `recv_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:135: undefined reference to `tcp_close'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:136: undefined reference to `tcp_recv'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:142: undefined reference to `Xil_DCacheInvalidateRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:194: undefined reference to `tcp_recved'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:195: undefined reference to `pbuf_free'
+./src/echo.o: In function `accept_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:294: undefined reference to `tcp_recv'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:297: undefined reference to `tcp_sent'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:301: undefined reference to `tcp_arg'
+./src/echo.o: In function `start_application':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:319: undefined reference to `tcp_new_ip_type'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `ip_addr_any'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `ip_addr_any'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `tcp_bind'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:333: undefined reference to `tcp_arg'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:336: undefined reference to `tcp_listen_with_backlog'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:343: undefined reference to `tcp_accept'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:345: undefined reference to `xil_printf'
+./src/main.o: In function `main':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:102: undefined reference to `lwip_init'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:106: undefined reference to `xemac_add'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:109: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:127: undefined reference to `netif_set_default'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:133: undefined reference to `netif_set_up'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:141: undefined reference to `dhcp_start'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:145: undefined reference to `xemacif_input'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:149: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:150: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:177: undefined reference to `tcp_fasttmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:181: undefined reference to `tcp_slowtmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:184: undefined reference to `xemacif_input'
+./src/platform_zynq.o: In function `timer_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:115: undefined reference to `dhcp_fine_tmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:117: undefined reference to `dhcp_coarse_tmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:133: undefined reference to `xemacpsif_resetrx_on_no_rxdata'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:139: undefined reference to `eth_link_detect'
+./src/platform_zynq.o: In function `platform_setup_timer':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:152: undefined reference to `XScuTimer_LookupConfig'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:153: undefined reference to `XScuTimer_CfgInitialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:157: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:162: undefined reference to `XScuTimer_SelfTest'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:164: undefined reference to `xil_printf'
+./src/platform_zynq.o: In function `platform_setup_interrupts':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:182: undefined reference to `Xil_ExceptionInit'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:184: undefined reference to `XScuGic_DeviceInitialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `XScuGic_DeviceInterruptHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `XScuGic_DeviceInterruptHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `Xil_ExceptionRegisterHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:198: undefined reference to `XScuGic_RegisterHandler'
+./src/platform_zynq.o: In function `platform_enable_interrupts':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:216: undefined reference to `XScuTimer_Start'
+./src/platform_zynq.o: In function `cleanup_platform':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:230: undefined reference to `Xil_ICacheDisable'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:231: undefined reference to `Xil_DCacheDisable'
+./src/state_machine.o: In function `fn_echo':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:12: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:18: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:20: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_setChipIO':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:45: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:47: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_setModeIO':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:75: undefined reference to `tcp_write'
+./src/state_machine.o:D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:77: more undefined references to `tcp_write' follow
+./src/state_machine.o: In function `fn_stepimc_EXT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:537: undefined reference to `step_IMC_EXT'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:543: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:545: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_stepimc_INT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:560: undefined reference to `step_IMC_INT'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:566: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:568: undefined reference to `tcp_write'
+./src/utils.o: In function `initialise_AXI':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:77: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:78: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:79: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:80: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:81: undefined reference to `XGpio_Initialize'
+./src/utils.o:D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:82: more undefined references to `XGpio_Initialize' follow
+./src/utils.o: In function `initialise_AXI':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:84: undefined reference to `XAxiDma_LookupConfig'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:85: undefined reference to `XAxiDma_CfgInitialize'
+./src/utils.o: In function `initialise_FPGA':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:131: undefined reference to `sleep'
+./src/utils.o: In function `get_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:141: undefined reference to `XGpio_DiscreteRead'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:144: undefined reference to `XGpio_DiscreteRead'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:147: undefined reference to `XGpio_DiscreteRead'
+./src/utils.o: In function `set_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:180: undefined reference to `XGpio_DiscreteWrite'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:181: undefined reference to `XGpio_DiscreteWrite'
+./src/utils.o: In function `set_MODE_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:200: undefined reference to `XGpio_DiscreteWrite'
+./src/utils.o: In function `dma_send_recv_test':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:428: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:429: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:435: undefined reference to `XAxiDma_Busy'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:456: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:457: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:463: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `verilog_scan_in':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:504: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:505: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:511: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `verilog_scan_out':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:659: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:668: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:676: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `fast_IMC':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1029: undefined reference to `sleep'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1070: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1071: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1078: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `fast_IMC_EXT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1161: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1162: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1169: undefined reference to `XAxiDma_Busy'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text+0x1c): undefined reference to `_sbrk'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text+0x28): undefined reference to `_write'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text+0x1c): undefined reference to `_close'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text+0x24): undefined reference to `_fstat'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text+0x1c): undefined reference to `_isatty'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text+0x28): undefined reference to `_lseek'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text+0x28): undefined reference to `_read'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: C_Controller_v1.elf] Error 1
+19:57:35 **** Auto Build of configuration Debug for project C_Controller_v1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/utils.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../../C_Controller_v1_bsp/ps7_cortexa9_0/include -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.3.1\include-fixed" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\include" -I"D:\Xilinx\SDK\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+In file included from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:116:0,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:83,
+                 from ../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xaxidma.h:488,
+                 from ../src/state_machine.h:9,
+                 from ../src/utils.c:3:
+../../C_Controller_v1_bsp/ps7_cortexa9_0/include/xdebug.h:8:2: warning: #warning DEBUG is enabled [-Wcpp]
+ #warning DEBUG is enabled
+  ^~~~~~~
+'Finished building: ../src/utils.c'
+' '
+'Building target: C_Controller_v1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../C_Controller_v1_bsp/ps7_cortexa9_0/lib -o "C_Controller_v1.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o ./src/state_machine.o ./src/utils.o   
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _vector_table; defaulting to 0000000000100000
+./src/echo.o: In function `print_ip':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:72: undefined reference to `print'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:73: undefined reference to `xil_printf'
+./src/echo.o: In function `push_data':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:113: undefined reference to `tcp_write'
+./src/echo.o: In function `recv_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:135: undefined reference to `tcp_close'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:136: undefined reference to `tcp_recv'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:142: undefined reference to `Xil_DCacheInvalidateRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:194: undefined reference to `tcp_recved'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:195: undefined reference to `pbuf_free'
+./src/echo.o: In function `accept_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:294: undefined reference to `tcp_recv'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:297: undefined reference to `tcp_sent'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:301: undefined reference to `tcp_arg'
+./src/echo.o: In function `start_application':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:319: undefined reference to `tcp_new_ip_type'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `ip_addr_any'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `ip_addr_any'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:326: undefined reference to `tcp_bind'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:333: undefined reference to `tcp_arg'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:336: undefined reference to `tcp_listen_with_backlog'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:343: undefined reference to `tcp_accept'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/echo.c:345: undefined reference to `xil_printf'
+./src/main.o: In function `main':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:102: undefined reference to `lwip_init'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:106: undefined reference to `xemac_add'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:109: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:127: undefined reference to `netif_set_default'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:133: undefined reference to `netif_set_up'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:141: undefined reference to `dhcp_start'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:145: undefined reference to `xemacif_input'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:149: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:150: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:177: undefined reference to `tcp_fasttmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:181: undefined reference to `tcp_slowtmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/main.c:184: undefined reference to `xemacif_input'
+./src/platform_zynq.o: In function `timer_callback':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:115: undefined reference to `dhcp_fine_tmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:117: undefined reference to `dhcp_coarse_tmr'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:133: undefined reference to `xemacpsif_resetrx_on_no_rxdata'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:139: undefined reference to `eth_link_detect'
+./src/platform_zynq.o: In function `platform_setup_timer':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:152: undefined reference to `XScuTimer_LookupConfig'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:153: undefined reference to `XScuTimer_CfgInitialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:157: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:162: undefined reference to `XScuTimer_SelfTest'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:164: undefined reference to `xil_printf'
+./src/platform_zynq.o: In function `platform_setup_interrupts':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:182: undefined reference to `Xil_ExceptionInit'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:184: undefined reference to `XScuGic_DeviceInitialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `XScuGic_DeviceInterruptHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `XScuGic_DeviceInterruptHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:190: undefined reference to `Xil_ExceptionRegisterHandler'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:198: undefined reference to `XScuGic_RegisterHandler'
+./src/platform_zynq.o: In function `platform_enable_interrupts':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:216: undefined reference to `XScuTimer_Start'
+./src/platform_zynq.o: In function `cleanup_platform':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:230: undefined reference to `Xil_ICacheDisable'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/platform_zynq.c:231: undefined reference to `Xil_DCacheDisable'
+./src/state_machine.o: In function `fn_echo':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:12: undefined reference to `xil_printf'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:18: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:20: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_setChipIO':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:45: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:47: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_setModeIO':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:75: undefined reference to `tcp_write'
+./src/state_machine.o:D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:77: more undefined references to `tcp_write' follow
+./src/state_machine.o: In function `fn_stepimc_EXT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:537: undefined reference to `step_IMC_EXT'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:543: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:545: undefined reference to `tcp_write'
+./src/state_machine.o: In function `fn_stepimc_INT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:560: undefined reference to `step_IMC_INT'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:566: undefined reference to `tcp_write'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/state_machine.c:568: undefined reference to `tcp_write'
+./src/utils.o: In function `initialise_AXI':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:77: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:78: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:79: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:80: undefined reference to `XGpio_Initialize'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:81: undefined reference to `XGpio_Initialize'
+./src/utils.o:D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:82: more undefined references to `XGpio_Initialize' follow
+./src/utils.o: In function `initialise_AXI':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:84: undefined reference to `XAxiDma_LookupConfig'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:85: undefined reference to `XAxiDma_CfgInitialize'
+./src/utils.o: In function `initialise_FPGA':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:131: undefined reference to `sleep'
+./src/utils.o: In function `get_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:141: undefined reference to `XGpio_DiscreteRead'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:144: undefined reference to `XGpio_DiscreteRead'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:147: undefined reference to `XGpio_DiscreteRead'
+./src/utils.o: In function `set_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:180: undefined reference to `XGpio_DiscreteWrite'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:181: undefined reference to `XGpio_DiscreteWrite'
+./src/utils.o: In function `set_MODE_AXI_Bits':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:200: undefined reference to `XGpio_DiscreteWrite'
+./src/utils.o: In function `dma_send_recv_test':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:428: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:429: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:435: undefined reference to `XAxiDma_Busy'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:456: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:457: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:463: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `verilog_scan_in':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:504: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:505: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:511: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `verilog_scan_out':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:659: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:668: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:676: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `fast_IMC':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1029: undefined reference to `sleep'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1070: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1071: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1078: undefined reference to `XAxiDma_Busy'
+./src/utils.o: In function `fast_IMC_EXT':
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1161: undefined reference to `Xil_DCacheFlushRange'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1162: undefined reference to `XAxiDma_SimpleTransfer'
+D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\C_Controller_v1\Debug/../src/utils.c:1169: undefined reference to `XAxiDma_Busy'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o): In function `_sbrk_r':
+sbrkr.c:(.text+0x1c): undefined reference to `_sbrk'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o): In function `_write_r':
+writer.c:(.text+0x28): undefined reference to `_write'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o): In function `_close_r':
+closer.c:(.text+0x1c): undefined reference to `_close'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o): In function `_fstat_r':
+fstatr.c:(.text+0x24): undefined reference to `_fstat'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o): In function `_isatty_r':
+isattyr.c:(.text+0x1c): undefined reference to `_isatty'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o): In function `_lseek_r':
+lseekr.c:(.text+0x28): undefined reference to `_lseek'
+d:/xilinx/sdk/2018.3/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../arm-none-eabi/libc/usr/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o): In function `_read_r':
+readr.c:(.text+0x28): undefined reference to `_read'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: C_Controller_v1.elf] Error 1

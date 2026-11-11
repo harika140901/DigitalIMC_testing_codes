@@ -7334,3 +7334,10 @@ Caused by: java.lang.NullPointerException
 19:41:43 INFO  : Successfully done setting XSCT server connection channel  
 19:41:43 INFO  : Successfully done setting SDK workspace  
 19:41:43 INFO  : Processing command line option -hwspec D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper.hdf.
+19:51:03 INFO  : Registering command handlers for SDK TCF services
+19:51:03 INFO  : Launching XSCT server: xsct.bat -interactive D:\Harika\DigitalIMC_testing_codes\project_1\project_1.sdk\temp_xsdb_launch_script.tcl
+19:51:04 INFO  : XSCT server has started successfully.
+19:51:04 INFO  : Successfully done setting XSCT server connection channel  
+19:51:04 INFO  : Successfully done setting SDK workspace  
+19:51:04 INFO  : Processing command line option -hwspec D:/Harika/DigitalIMC_testing_codes/project_1/project_1.sdk/design_1_wrapper.hdf.
+19:51:04 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_1.
