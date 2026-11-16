@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Nov 11 19:39:52 2026
+| Date             : Thu Nov 12 15:26:43 2026
 | Host             : ams34 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.718        |
+| Total On-Chip Power (W)  | 1.725        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.574        |
+| Dynamic (W)              | 1.581        |
 | Device Static (W)        | 0.144        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.2         |
-| Junction Temperature (C) | 44.8         |
+| Max Ambient (C)          | 65.1         |
+| Junction Temperature (C) | 44.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -64,9 +64,9 @@ Table of Contents
 | Signals                  |     0.009 |    11589 |       --- |             --- |
 | Block RAM                |    <0.001 |        2 |       140 |            1.43 |
 | I/O                      |    <0.001 |       33 |       200 |           16.50 |
-| PS7                      |     1.527 |        1 |       --- |             --- |
+| PS7                      |     1.533 |        1 |       --- |             --- |
 | Static Power             |     0.144 |          |           |                 |
-| Total                    |     1.718 |          |           |                 |
+| Total                    |     1.725 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -89,7 +89,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.747 |       0.716 |      0.030 |
+| Vccpint   |       1.000 |     0.753 |       0.722 |      0.031 |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -152,8 +152,8 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| design_1_wrapper            |     1.574 |
-|   design_1_i                |     1.574 |
+| design_1_wrapper            |     1.581 |
+|   design_1_i                |     1.580 |
 |     DIG_DEBUG_AXI_OUT_BUS_0 |     0.001 |
 |       U0                    |     0.001 |
 |     Verilog_Controller_0    |     0.006 |
@@ -163,8 +163,8 @@ Table of Contents
 |     axi_interconnect_1      |     0.005 |
 |       s00_couplers          |     0.004 |
 |       xbar                  |     0.001 |
-|     processing_system7_0    |     1.528 |
-|       inst                  |     1.528 |
+|     processing_system7_0    |     1.535 |
+|       inst                  |     1.535 |
 |     smartconnect_0          |     0.024 |
 |       inst                  |     0.024 |
 +-----------------------------+-----------+

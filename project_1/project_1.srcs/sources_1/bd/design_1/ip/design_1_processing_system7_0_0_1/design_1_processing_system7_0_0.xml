@@ -14402,11 +14402,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:14:22 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:11 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48e66671</spirit:value>
+            <spirit:value>9:4012fe35</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14422,11 +14422,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:14:22 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:11 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48e66671</spirit:value>
+            <spirit:value>9:4012fe35</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14447,7 +14447,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cf0604db</spirit:value>
+            <spirit:value>9:46fbabb7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14462,11 +14462,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:14:22 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:11 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cf0604db</spirit:value>
+            <spirit:value>9:46fbabb7</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14489,11 +14489,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:14:22 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:12 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cf0604db</spirit:value>
+            <spirit:value>9:46fbabb7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14508,11 +14508,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:14:23 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:13 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:cf0604db</spirit:value>
+            <spirit:value>9:46fbabb7</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14530,11 +14530,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 24 11:19:48 UTC 2026</spirit:value>
+            <spirit:value>Thu Nov 12 09:54:41 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48e66671</spirit:value>
+            <spirit:value>9:4012fe35</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -32716,7 +32716,7 @@
     <spirit:parameter>
       <spirit:name>PCW_CRYSTAL_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW CRYSTAL PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CRYSTAL_PERIPHERAL_FREQMHZ" spirit:order="23200" spirit:minimum="30.000000" spirit:maximum="60.000000">50</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CRYSTAL_PERIPHERAL_FREQMHZ" spirit:order="23200" spirit:minimum="30.000000" spirit:maximum="60.000000">33.333333</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_APU_PERIPHERAL_FREQMHZ</spirit:name>
@@ -32968,17 +32968,17 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_APU_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT APU PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_APU_PERIPHERAL_FREQMHZ" spirit:order="26400" spirit:minimum="50.000000" spirit:maximum="800.000000">650.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_APU_PERIPHERAL_FREQMHZ" spirit:order="26400" spirit:minimum="50.000000" spirit:maximum="800.000000">666.666687</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_UIPARAM_ACT_DDR_FREQ_MHZ</spirit:name>
       <spirit:displayName>PCW UIPARAM ACT DDR FREQ MHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_UIPARAM_ACT_DDR_FREQ_MHZ" spirit:order="26500" spirit:minimum="200.000000" spirit:maximum="534.000000">525.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_UIPARAM_ACT_DDR_FREQ_MHZ" spirit:order="26500" spirit:minimum="200.000000" spirit:maximum="534.000000">533.333374</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_DCI_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT DCI PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_DCI_PERIPHERAL_FREQMHZ" spirit:order="26600" spirit:minimum="0.100000" spirit:maximum="177.000000">10.096154</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_DCI_PERIPHERAL_FREQMHZ" spirit:order="26600" spirit:minimum="0.100000" spirit:maximum="177.000000">10.158730</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_QSPI_PERIPHERAL_FREQMHZ</spirit:name>
@@ -33048,7 +33048,7 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_WDT_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT WDT PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_WDT_PERIPHERAL_FREQMHZ" spirit:order="27800" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_WDT_PERIPHERAL_FREQMHZ" spirit:order="27800" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC_PERIPHERAL_FREQMHZ</spirit:name>
@@ -33088,32 +33088,32 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28600" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28600" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ" spirit:order="28700" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ" spirit:order="28700" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ" spirit:order="28800" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ" spirit:order="28800" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28900" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28900" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ" spirit:order="29000" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ" spirit:order="29000" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ" spirit:order="29100" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ" spirit:order="29100" spirit:minimum="0.100000" spirit:maximum="200.000000">111.111115</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK0_FREQ</spirit:name>
@@ -33407,7 +33407,7 @@
     <spirit:parameter>
       <spirit:name>PCW_DCI_PERIPHERAL_DIVISOR0</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DCI_PERIPHERAL_DIVISOR0" spirit:order="62900">52</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DCI_PERIPHERAL_DIVISOR0" spirit:order="62900">15</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33419,7 +33419,7 @@
     <spirit:parameter>
       <spirit:name>PCW_DCI_PERIPHERAL_DIVISOR1</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DCI_PERIPHERAL_DIVISOR1" spirit:order="62900">2</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DCI_PERIPHERAL_DIVISOR1" spirit:order="62900">7</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33478,7 +33478,7 @@
     <spirit:parameter>
       <spirit:name>PCW_ARMPLL_CTRL_FBDIV</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ARMPLL_CTRL_FBDIV" spirit:order="62900">26</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ARMPLL_CTRL_FBDIV" spirit:order="62900">40</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33490,7 +33490,7 @@
     <spirit:parameter>
       <spirit:name>PCW_IOPLL_CTRL_FBDIV</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IOPLL_CTRL_FBDIV" spirit:order="62900">20</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IOPLL_CTRL_FBDIV" spirit:order="62900">30</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33502,7 +33502,7 @@
     <spirit:parameter>
       <spirit:name>PCW_DDRPLL_CTRL_FBDIV</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DDRPLL_CTRL_FBDIV" spirit:order="62900">21</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DDRPLL_CTRL_FBDIV" spirit:order="62900">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33514,7 +33514,7 @@
     <spirit:parameter>
       <spirit:name>PCW_CPU_CPU_PLL_FREQMHZ</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_PLL_FREQMHZ" spirit:order="62900">1300.000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_PLL_FREQMHZ" spirit:order="62900">1333.333</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -33538,7 +33538,7 @@
     <spirit:parameter>
       <spirit:name>PCW_DDR_DDR_PLL_FREQMHZ</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DDR_DDR_PLL_FREQMHZ" spirit:order="62900">1050.000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_DDR_DDR_PLL_FREQMHZ" spirit:order="62900">1066.667</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -35826,13 +35826,6 @@
     <spirit:parameter>
       <spirit:name>PCW_ENET0_RESET_IO</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ENET0_RESET_IO" spirit:choiceRef="choice_list_d679c87d" spirit:order="6104">&lt;Select></spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.PCW_ENET0_RESET_IO">false</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ENET1_PERIPHERAL_ENABLE</spirit:name>
@@ -36565,13 +36558,6 @@
     <spirit:parameter>
       <spirit:name>PCW_USB0_RESET_IO</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_USB0_RESET_IO" spirit:choiceRef="choice_list_d679c87d" spirit:order="6302">&lt;Select></spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.PCW_USB0_RESET_IO">false</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_USB1_PERIPHERAL_ENABLE</spirit:name>

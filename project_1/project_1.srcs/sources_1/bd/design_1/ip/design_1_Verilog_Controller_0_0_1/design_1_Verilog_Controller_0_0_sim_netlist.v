@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Nov 11 19:37:51 2026
+// Date        : Wed Nov 11 20:10:55 2026
 // Host        : ams34 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/design_1_Verilog_Controller_0_0_sim_netlist.v
@@ -235,8 +235,8 @@ module design_1_Verilog_Controller_0_0_IMC_ScanOut
     MUX_OUT_PAD,
     IN_EN,
     clk,
-    MUX_OUT_PAD_C,
     scan_mode_setting_in,
+    MUX_OUT_PAD_C,
     MUX_SEL0,
     IN_EN_C,
     imc_done_scan_out);
@@ -246,8 +246,8 @@ module design_1_Verilog_Controller_0_0_IMC_ScanOut
   output MUX_OUT_PAD;
   output IN_EN;
   input clk;
-  input MUX_OUT_PAD_C;
   input [3:0]scan_mode_setting_in;
+  input MUX_OUT_PAD_C;
   input MUX_SEL0;
   input IN_EN_C;
   input imc_done_scan_out;
@@ -517,16 +517,16 @@ module design_1_Verilog_Controller_0_0_IMC_Wrapper_0
     CLK_CAPTURE_IMC,
     MUX_OUT_PAD,
     clk,
-    MUX_OUT_PAD_C,
     scan_mode_setting_in,
+    MUX_OUT_PAD_C,
     MUX_SEL0,
     FSM_state);
   output COMPUTE_EN_IMC;
   output CLK_CAPTURE_IMC;
   output MUX_OUT_PAD;
   input clk;
-  input MUX_OUT_PAD_C;
   input [2:0]scan_mode_setting_in;
+  input MUX_OUT_PAD_C;
   input MUX_SEL0;
   input [2:0]FSM_state;
 
@@ -640,14 +640,14 @@ module design_1_Verilog_Controller_0_0_IMC_Wrapper_0
         .Q(\FSM_onehot_FSM_state_reg_n_1_[4] ),
         .R(p_2_in));
   LUT6 #(
-    .INIT(64'h00000000FFE200E2)) 
+    .INIT(64'hFFFFFEAEAAAAFEAE)) 
     MUX_OUT_PAD_INST_0
-       (.I0(MUX_OUT_PAD_C),
-        .I1(scan_mode_setting_in[1]),
-        .I2(MUX_SEL_IMC),
-        .I3(scan_mode_setting_in[2]),
-        .I4(MUX_SEL0),
-        .I5(scan_mode_setting_in[0]),
+       (.I0(scan_mode_setting_in[0]),
+        .I1(MUX_OUT_PAD_C),
+        .I2(scan_mode_setting_in[1]),
+        .I3(MUX_SEL_IMC),
+        .I4(scan_mode_setting_in[2]),
+        .I5(MUX_SEL0),
         .O(MUX_OUT_PAD));
   LUT6 #(
     .INIT(64'h00000E000E000000)) 
@@ -882,9 +882,9 @@ module design_1_Verilog_Controller_0_0_Verilog_Controller
    (SCAN_DONE_FLAGS,
     CONTROL_EN,
     DFF_RST,
-    MUX_OUT_PAD,
     CLK_OUT_PAD,
     COMPUTE_EN,
+    MUX_OUT_PAD,
     SCN_IN,
     out_tdata,
     WL_EN,
@@ -896,9 +896,9 @@ module design_1_Verilog_Controller_0_0_Verilog_Controller
     scan_mode_setting_in,
     CONTROL_EN_C,
     DFF_RST_C,
-    MUX_OUT_PAD_C,
     CLK_OUT_PAD_C,
     COMPUTE_EN_C,
+    MUX_OUT_PAD_C,
     out_tready,
     SCN_IN_C,
     WL_EN_C,
@@ -909,9 +909,9 @@ module design_1_Verilog_Controller_0_0_Verilog_Controller
   output [3:0]SCAN_DONE_FLAGS;
   output CONTROL_EN;
   output DFF_RST;
-  output MUX_OUT_PAD;
   output CLK_OUT_PAD;
   output COMPUTE_EN;
+  output MUX_OUT_PAD;
   output SCN_IN;
   output [31:0]out_tdata;
   output WL_EN;
@@ -923,9 +923,9 @@ module design_1_Verilog_Controller_0_0_Verilog_Controller
   input [15:0]scan_mode_setting_in;
   input CONTROL_EN_C;
   input DFF_RST_C;
-  input MUX_OUT_PAD_C;
   input CLK_OUT_PAD_C;
   input COMPUTE_EN_C;
+  input MUX_OUT_PAD_C;
   input out_tready;
   input SCN_IN_C;
   input WL_EN_C;

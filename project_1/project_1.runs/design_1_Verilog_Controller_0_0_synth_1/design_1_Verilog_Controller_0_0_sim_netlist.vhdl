@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Nov 11 19:37:50 2026
+-- Date        : Wed Nov 11 20:10:54 2026
 -- Host        : ams34 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_Verilog_Controller_0_0_sim_netlist.vhdl
@@ -215,8 +215,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_IMC_Wrapper_0 is
     CLK_CAPTURE_IMC : out STD_LOGIC;
     MUX_OUT_PAD : out STD_LOGIC;
     clk : in STD_LOGIC;
-    MUX_OUT_PAD_C : in STD_LOGIC;
     scan_mode_setting_in : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    MUX_OUT_PAD_C : in STD_LOGIC;
     MUX_SEL0 : in STD_LOGIC;
     FSM_state : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
@@ -364,15 +364,15 @@ COMPUTE_EN_reg: unisim.vcomponents.FDRE
     );
 MUX_OUT_PAD_INST_0: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00000000FFE200E2"
+      INIT => X"FFFFFEAEAAAAFEAE"
     )
         port map (
-      I0 => MUX_OUT_PAD_C,
-      I1 => scan_mode_setting_in(1),
-      I2 => MUX_SEL_IMC,
-      I3 => scan_mode_setting_in(2),
-      I4 => MUX_SEL0,
-      I5 => scan_mode_setting_in(0),
+      I0 => scan_mode_setting_in(0),
+      I1 => MUX_OUT_PAD_C,
+      I2 => scan_mode_setting_in(1),
+      I3 => MUX_SEL_IMC,
+      I4 => scan_mode_setting_in(2),
+      I5 => MUX_SEL0,
       O => MUX_OUT_PAD
     );
 \MUX_SEL_i_1__0\: unisim.vcomponents.LUT6
@@ -43030,8 +43030,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_IMC_ScanOut is
     MUX_OUT_PAD : out STD_LOGIC;
     IN_EN : out STD_LOGIC;
     clk : in STD_LOGIC;
-    MUX_OUT_PAD_C : in STD_LOGIC;
     scan_mode_setting_in : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    MUX_OUT_PAD_C : in STD_LOGIC;
     MUX_SEL0 : in STD_LOGIC;
     IN_EN_C : in STD_LOGIC;
     imc_done_scan_out : in STD_LOGIC
@@ -43160,9 +43160,9 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Verilog_Controller is
     SCAN_DONE_FLAGS : out STD_LOGIC_VECTOR ( 3 downto 0 );
     CONTROL_EN : out STD_LOGIC;
     DFF_RST : out STD_LOGIC;
-    MUX_OUT_PAD : out STD_LOGIC;
     CLK_OUT_PAD : out STD_LOGIC;
     COMPUTE_EN : out STD_LOGIC;
+    MUX_OUT_PAD : out STD_LOGIC;
     SCN_IN : out STD_LOGIC;
     out_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     WL_EN : out STD_LOGIC;
@@ -43174,9 +43174,9 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Verilog_Controller is
     scan_mode_setting_in : in STD_LOGIC_VECTOR ( 15 downto 0 );
     CONTROL_EN_C : in STD_LOGIC;
     DFF_RST_C : in STD_LOGIC;
-    MUX_OUT_PAD_C : in STD_LOGIC;
     CLK_OUT_PAD_C : in STD_LOGIC;
     COMPUTE_EN_C : in STD_LOGIC;
+    MUX_OUT_PAD_C : in STD_LOGIC;
     out_tready : in STD_LOGIC;
     SCN_IN_C : in STD_LOGIC;
     WL_EN_C : in STD_LOGIC;

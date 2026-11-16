@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Nov 11 19:37:51 2026
+-- Date        : Wed Nov 11 20:10:55 2026
 -- Host        : ams34 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               D:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0_1/design_1_Verilog_Controller_0_0_stub.vhdl

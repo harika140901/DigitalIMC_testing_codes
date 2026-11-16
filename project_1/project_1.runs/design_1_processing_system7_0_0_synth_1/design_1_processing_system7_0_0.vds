@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Oct 24 16:49:32 2026
-# Process ID: 8668
-# Current directory: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1
+# Start of session at: Thu Nov 12 15:24:25 2026
+# Process ID: 44344
+# Current directory: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1
 # Command line: vivado.exe -log design_1_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_processing_system7_0_0.tcl
-# Log file: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.vds
-# Journal file: C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1\vivado.jou
+# Log file: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.vds
+# Journal file: D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_processing_system7_0_0.tcl -notrace
 Command: synth_design -top design_1_processing_system7_0_0 -part xc7z020clg484-1 -mode out_of_context
@@ -15,12 +15,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26464 
+INFO: Helper process launched with PID 39404 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 382.027 ; gain = 104.777
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 382.445 ; gain = 104.656
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:60]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -77,17 +77,17 @@ INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_sys
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:609]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (1#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:609]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:270]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (2#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:270]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:41553]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:41553]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
-WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:467]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (5#1) [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:467]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (5#1) [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/synth/design_1_processing_system7_0_0.v:60]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
@@ -168,7 +168,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[1]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 438.684 ; gain = 161.434
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 439.844 ; gain = 162.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -181,50 +181,50 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 438.684 ; gain = 161.434
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 439.844 ; gain = 162.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 438.684 ; gain = 161.434
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 439.844 ; gain = 162.055
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/dsdl/Documents/Harika/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_processing_system7_0_0_propImpl.xdc].
+Parsing XDC File [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/Harika/DigitalIMC_testing_codes/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_processing_system7_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_processing_system7_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 721.852 ; gain = 0.000
-Parsing XDC File [C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 722.242 ; gain = 0.000
+Parsing XDC File [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 721.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 722.242 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 721.852 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 721.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 722.242 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 722.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 721.852 ; gain = 444.602
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 722.242 ; gain = 444.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 721.852 ; gain = 444.602
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 722.242 ; gain = 444.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 721.852 ; gain = 444.602
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 722.242 ; gain = 444.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 721.852 ; gain = 444.602
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 722.242 ; gain = 444.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -282,7 +282,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 721.852 ; gain = 444.602
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 722.242 ; gain = 444.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -294,13 +294,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 925.273 ; gain = 648.023
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 926.418 ; gain = 648.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 945.324 ; gain = 668.074
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 946.625 ; gain = 668.836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -312,7 +312,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -336,7 +336,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -349,7 +349,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -361,25 +361,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -409,30 +409,30 @@ Report Instance Areas:
 |2     |  inst   |processing_system7_v5_5_processing_system7 |   244|
 +------+---------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 79 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 950.309 ; gain = 389.891
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 950.309 ; gain = 673.059
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 952.734 ; gain = 392.547
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 952.734 ; gain = 674.945
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 962.078 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 963.457 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 23 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 962.441 ; gain = 692.355
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 962.441 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 963.625 ; gain = 693.020
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 963.625 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_processing_system7_0_0, cache-ID = 732f61e03294a1f9
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 962.441 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_processing_system7_0_0, cache-ID = 9b8b07afa10d9bd6
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 963.625 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/dsdl/Documents/Harika/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Harika/DigitalIMC_testing_codes/project_1/project_1.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_processing_system7_0_0_utilization_synth.rpt -pb design_1_processing_system7_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 24 16:49:48 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 12 15:24:41 2026...
